@@ -1,2 +1,2 @@
-# m3-framework.github.io
-Official Site
+# M3 Framework Official Web Site
+Powerful, yet, Simple
