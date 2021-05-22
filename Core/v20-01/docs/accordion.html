@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accordions | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field m3-transparent">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a class="m3-text-skyblue">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#SecStA">♦️ Styling Accordions</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#SecABD">♦️ Active by Default</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-bronze m3-text-yellow">JavaScript Required</span>
+            <button class="m3-small m3-accordion" style="padding: 0; margin: 0 5px;">Click here to see the code</button>
+            <div class="m3-panel" style="padding: 0;">
+                <pre class="m3-bronze"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('AccJS');"></button><code id='AccJS' class="m3-border-yellow">
+let acc = document.getElementsByClassName("m3-accordion"); let i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight){
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = (panel.scrollHeight+5) + "px";
+        } 
+    });
+}
+                </code></pre>
+            </div>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Accordions</h4>
+                    <p>An accordion is used to show (and hide) HTML content. They allow you to hide content that is not immediately relevant to the user. </p>
+
+                    <div class="m3-accordion m3-space-gray">Section 1</div>
+                    <div class="m3-panel m3-light-gray">
+                        <article class="m3-padding-2x">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet deserunt ut, fuga possimus quia exercitationem, distinctio necessitatibus nisi doloremque molestiae, voluptates error dignissimos quos tempore reprehenderit in quas cupiditate!</p>
+                        </article>
+                    </div>
+                    <div class="m3-accordion m3-space-gray">Section 2</div>
+                    <div class="m3-panel m3-light-gray" id="Sec2">
+                        <article class="m3-padding-2x">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet deserunt ut, fuga possimus quia exercitationem, distinctio necessitatibus nisi doloremque molestiae, voluptates error dignissimos quos tempore reprehenderit in quas cupiditate!</p>
+                        </article>
+                    </div>
+                    <div class="m3-accordion m3-space-gray">Section 3</div>
+                    <div class="m3-panel m3-light-gray">
+                        <article class="m3-padding-2x">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet deserunt ut, fuga possimus quia exercitationem, distinctio necessitatibus nisi doloremque molestiae, voluptates error dignissimos quos tempore reprehenderit in quas cupiditate!</p>
+                        </article>
+                    </div>
+
+                    <div class="m3-padding m3-vertical-margin-3x m3-grey m3-shadow-2">
+                        <h5 class="m3-margin">Example:</h5>
+                        <div class="m3-container-fw">
+                            <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('AccHtml');"></button><code id='AccHtml'>
+&lt;div class="m3-accordion">Section 1&lt;/div>
+&lt;div class="m3-panel">
+    &lt;article class="m3-padding-2x">
+        &lt;p>Some text...&lt;/p>
+    &lt;/article>
+&lt;/div>
+                            </code></pre>
+                        </div>
+
+                        <p class="m3-margin">Where:</p>
+                        <p class="m3-padding-left">
+                            <code class="m3-dark">.m3-accordion</code> is the element that shows/hides the content when clicked. <br>
+                            <code class="m3-dark">.m3-panel</code> is the container where the content resides.
+                        </p>
+
+                    </div>
+
+                    <h4 id="SecStA">
+                        <a href="#SecStA" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Styling Accordions</h4>
+                    <p>Accordions may be stylized in several ways. Here are a few examples:</p>
+
+                    <article class="m3-vertical-margin-3x">
+                        <p class="h5 m3-text-center">Changing Width</p>
+                        <p>Using Buttons</p>
+                        <p>The trigger will resize as needed, and the panel will have full width.</p>
+                        <button class="m3-accordion m3-black" style="margin:0;">I'm a button</button>
+                        <div class="m3-panel m3-grey">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis eius architecto! Quasi ipsum numquam consequuntur fugit minus, in unde eius nulla temporibus ex! Ea aperiam aut rem delectus eos.</p>
+                        </div>
+                        <p class="m3-margin-top">To change the panel's size, just apply the width property to it.</p>
+                        <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy m3-text-white" onclick="CopyClip('ChangeSizeHtml');"></button><code id="ChangeSizeHtml">
+&lt;div class='m3-panel' style='max-width:300px;'>&lt;/div>
+                        </code></pre>
+                        <p>Result:</p>
+
+                        <button class="m3-accordion m3-black" style="margin:0;">I'm also a button</button>
+                        <div class="m3-panel m3-grey" style="max-width: 300px;">
+                            <p>My width has been changed 😮 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis eius architecto! Quasi ipsum numquam consequuntur fugit minus, in unde eius nulla temporibus ex! Ea aperiam aut rem delectus eos.</p>
+                        </div>
+                    </article>
+
+                    <article class="m3-vertical-margin-3x">
+                        <p class="h5 m3-margin-top-2x m3-text-center">Using Images</p>
+                        <p class="m3-text-center">
+                            Use an image to toggle an accordion. You can then write
+                            whatever you want inside.
+                        </p>
+
+                        <div class="m3-row">
+                            <div class="m3-item">
+                                <img src="http://placekitten.com/500/300" alt="Meow!" 
+                                class="m3-accordion">
+                                <div class="m3-panel">
+                                    The cat (Felis catus) is a small carnivorous mammal. It is the only domesticated species in the family Felidae and often referred to as the domestic cat to distinguish it from wild members of the family. The cat is either a house cat or a farm cat, which are pets, or a feral cat, which ranges freely and avoids human contact. House cats are valued by humans for companionship and for their ability to hunt rodents. About 60 cat breeds are recognized by various cat registries.    
+                                </div>
+                            </div>
+                            <div class="m3-item">
+                                <img src="http://placekitten.com/g/500/300" alt="Meow!" 
+                                class="m3-accordion">
+                                <div class="m3-panel">
+                                    The cat (Felis catus) is a small carnivorous mammal. It is the only domesticated species in the family Felidae and often referred to as the domestic cat to distinguish it from wild members of the family. The cat is either a house cat or a farm cat, which are pets, or a feral cat, which ranges freely and avoids human contact. House cats are valued by humans for companionship and for their ability to hunt rodents. About 60 cat breeds are recognized by various cat registries.    
+                                </div>
+                            </div>
+                        </div>
+                        <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy m3-text-white" onclick="CopyClip('AccImgHtml');"></button><code id="AccImgHtml">
+&lt;img src="http://placekitten.com/500/300" alt="Meow!" class="m3-accordion">
+&lt;div class="m3-panel">
+    Some text here...
+&lt;/div>
+                        </code></pre>
+
+                        <div class="m3-padding-2x m3-grey m3-shadow-2">
+                            <p class="h5">And to achieve the result showed above:</p>
+                            <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('MeowExHtml');"></button><code id="MeowExHtml">
+&lt;div class="m3-row">
+    &lt;div class="m3-item">
+        &lt;img src="http://placekitten.com/500/300" alt="Meow!" class="m3-accordion">
+        &lt;div class="m3-panel">
+            The cat (Felis catus) is a small carnivorous mammal. It is the only domesticated species in the family Felidae and often referred to as the domestic cat to distinguish it from wild members of the family. The cat is either a house cat or a farm cat, which are pets, or a feral cat, which ranges freely and avoids human contact. House cats are valued by humans for companionship and for their ability to hunt rodents. About 60 cat breeds are recognized by various cat registries.    
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="m3-item">
+        &lt;img src="http://placekitten.com/g/500/300" alt="Meow!" class="m3-accordion">
+        &lt;div class="m3-panel">
+            The cat (Felis catus) is a small carnivorous mammal. It is the only domesticated species in the family Felidae and often referred to as the domestic cat to distinguish it from wild members of the family. The cat is either a house cat or a farm cat, which are pets, or a feral cat, which ranges freely and avoids human contact. House cats are valued by humans for companionship and for their ability to hunt rodents. About 60 cat breeds are recognized by various cat registries.    
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+                            </code></pre>
+                        </div>
+                    </article>
+
+                </section>
+                <section class="m3-padding-2x" id="SecABD">
+                    <article class="m3-vertical-margin-3x">
+                        <h4>
+                            <a href="#SecABD" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                            Active by Default</h4>
+                        <div class="m3-container m3-padding-2x m3-vertical-margin-2x m3-light-gray">
+                            <p>
+                                💡 You will need to identify your <code class="m3-grey">.m3-panel</code>
+                                with the ID attribute. <br>
+                                <span class="m3-border-bottom m3-border-red">IMPORTANT:</span> Please make sure you put the ID in the .m3-panel ✔️ and not
+                                in the .m3-accordion ❌
+                            </p>
+                            <span class="m3-accordion m3-center m3-border"
+                            style="padding:0.4rem; background: #cecdcd;">Show me how!</span>
+                            <div class="m3-panel">
+                                <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy m3-text-white" onclick="CopyClip('ABDHtml');"></button><code id="ABDHtml">
+&lt;div class="m3-accordion">I´m Active by Default!&lt;/div>
+&lt;div class="m3-panel" id="SomePanel">
+    Some elements inside ... 
+&lt;/div>
+                                </code></pre>
+                                <p>Copy this code, add the JavaScript below, and you are ready to go!</p>
+                            </div>
+                        </div>
+                        <p>Just a few lines of JavaScript are required to make an accordion active:</p>
+                        <pre><button class="m3-right m3-margin-right far fa-copy m3-text-white" onclick="CopyClip('ABDJs');"></button><code class="js-dark" id="ABDJs">
+let accpanel = document.getElementById("SomePanel"); /* Identify an specific panel to open */
+accpanel.classList.toggle("active"); /* Optional: To keep track of whether or not an accordion is active.. */
+accpanel.style.maxHeight = (accpanel.scrollHeight+5) + "px"; /* Makes the panel active (open); */
+                        </code></pre>
+                        <p>Result:</p>
+                        <div class="m3-shadow-2 m3-border m3-vertical-margin">
+                            <div class="m3-accordion">First</div>
+                            <div class="m3-panel m3-light-gray">
+                                <article class="m3-padding-2x">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet deserunt ut, fuga possimus quia exercitationem, distinctio necessitatibus nisi doloremque molestiae, voluptates error dignissimos quos tempore reprehenderit in quas cupiditate!</p>
+                                </article>
+                            </div>
+                            <div class="m3-accordion m3-border-top">Second</div>
+                            <div class="m3-panel m3-light-gray" id="DfActPanel">
+                                <article class="m3-padding-2x">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet deserunt ut, fuga possimus quia exercitationem, distinctio necessitatibus nisi doloremque molestiae, voluptates error dignissimos quos tempore reprehenderit in quas cupiditate!</p>
+                                </article>
+                            </div>
+                            <div class="m3-accordion m3-border-top">Third</div>
+                            <div class="m3-panel m3-light-gray">
+                                <article class="m3-padding-2x">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet deserunt ut, fuga possimus quia exercitationem, distinctio necessitatibus nisi doloremque molestiae, voluptates error dignissimos quos tempore reprehenderit in quas cupiditate!</p>
+                                </article>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="m3-right" style="max-width: 800px;"> 
+                        <div class="m3-media items-center m3-small"> 
+                            <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                            <div class="m3-media-content"> 
+                                <b>Reminder:</b> 
+                                The colors used in this documentation are part of M3 Colors. <br>
+                                If you don't require our library, remember to replace each color with your own.
+                            </div> 
+                        </div> 
+                    </article>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Demo in the Documentation - Active By Default -
+        var accpanel = document.getElementById("DfActPanel"); // Identify an specific panel to open
+        accpanel.classList.toggle("active"); // Optional: To keep track of whether or not an accordion is active..
+        accpanel.style.maxHeight = (accpanel.scrollHeight+5) + "px"; // Makes the panel active (open);
+        // ------------------------------------------------------------------------------------------- //
+    </script>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

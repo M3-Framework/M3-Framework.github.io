@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alerts and Notifications | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a class="m3-text-skyblue">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Positioning">♦️ Positioning</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#TryOut">♦️ Try Out</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-transparent m3-border m3-border-yellow m3-text-bronze">JavaScript Optional</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Alerts and Notifications</h4>
+                    <div class="m3-vertical-margin-2x">
+                        <span class="m3-tag m3-small m3-silver">z-index: 10</span>
+                    </div>
+                    
+                    <p>Alert messages can be used to notify the user about something special: danger, success, information or warning. <br>
+                        An alert will remain in the page indefinitely but a
+                        notification is dismissed after 5 seconds. 
+                    </p>
+
+                    <button class="m3-btn m3-transparent m3-hover-light-gray"
+                    onclick="ShowEx(1);">Show Alert</button>
+
+                    <button class="m3-btn m3-transparent m3-hover-light-gray"
+                    onclick="ShowEx(2);">Show Notification</button>
+
+
+                    <div class="m3-padding m3-vertical-margin-3x m3-grey m3-shadow-2">
+                        <h5 class="m3-margin">HTML Only:</h5>
+                        <div class="m3-container-fw">
+                            <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('AlertHtml');"></button><code id='AlertHtml'>
+&lt;div class="m3-alert m3-text-center">
+    &lt;button class="m3-close m3-small" onclick="this.parentElement.classList.add('m3-animate-bounce-out');">
+        Close
+    &lt;/button>
+    &lt;div class='m3-huge m3-margin-top-2x'>
+        &lt;span class='m3-icon'>😎&lt;/span>
+        &lt;p>You are cool!&lt;/p>
+    &lt;/div>
+&lt;/div>
+                            </code></pre>
+
+                            <pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NotifHtml');"></button><code id='NotifHtml'>
+&lt;div class="m3-notification">
+    &lt;div class='m3-huge'>
+        &lt;span class='m3-icon'>😎&lt;/span>
+        &lt;p>You are cool!&lt;/p>
+    &lt;/div>
+&lt;/div>
+                            </code></pre>
+                        </div>
+
+                        <p class="m3-margin">Where:</p>
+                        <p class="m3-padding-left">
+                            <code class="m3-dark css-dark">.m3-alert</code> is the main container. <br>
+                            <code class="m3-dark css-dark">.m3-close</code> positions itself to the top-right.
+                        </p>
+
+                        <h5 class="m3-margin">Using JavaScript:</h5>
+                        <div class="m3-container-fw">
+                            
+                            <pre><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('AlertJS');"></button><div class="m3-margin m3-small">Alerts</div><code class="js-dark" id='AlertJS'>
+const m3_alert = document.createElement("div");
+m3_alert.className = "m3-alert m3-text-center";
+const close_btn = document.createElement("a");
+close_btn.className = 'm3-close';
+
+close_btn.innerText = "Close";
+m3_alert.innerHTML += "Some elements...";
+m3_alert.appendChild(close_btn);
+
+close_btn.addEventListener("click", function(){close_btn.parentElement.classList.add('m3-animate-bounce-out');});
+document.body.append(m3_alert);
+                            </code></pre>
+
+                            <pre><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NotifJS');"></button><div class="m3-margin m3-small">Notifications</div><code class="js-dark" id='NotifJS'>
+const m3_notification = document.createElement("div");
+m3_notification.className = "m3-notification m3-space-gray";
+m3_notification.innerHTML += "<span class='m3-large'>You're cool! 😎</span>";
+document.body.append(m3_notification);
+                            </code></pre>
+
+                        </div>
+
+                    </div>
+
+                        <div class="m3-vertical-margin-2x" id='Positioning'>
+                            <p>
+                                <a href="#Positioning" 
+                                class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                                The following classes are available for box positioning:
+                            </p>
+                            <div class="m3-table-overflow">
+                            <table class="m3-table bordered">
+                                <caption class="m3-sr-only">Positioning Classes For M3 Alerts & Notifications</caption>
+                                <thead>
+                                    <th>Class</th>
+                                    <th>Description</th>
+                                </thead>
+                                <tbody>
+                                    <tr class="m3-hover-light-gray">
+                                        <td>.top-left</td>
+                                        <td>Displays an .m3-alert/.m3-notification on the top-left corner</td>
+                                    </tr>
+                                    <tr class="m3-hover-light-gray">
+                                        <td>.top-right</td>
+                                        <td>Displays an .m3-alert/.m3-notification on the top-right corner</td>
+                                    </tr>
+                                    <tr class="m3-hover-light-gray">
+                                        <td>.bottom-left</td>
+                                        <td>Displays an .m3-alert/.m3-notification on the bottom-left corner</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            <p>
+                                On small screens, an alert will be positioned in the bottom and will have a width of 100%.
+                                A notification, however, will remain unaffected and its position may be changed. Notifications are expected 
+                                to have fewer content than alerts and therefore they will not obstruct user's screen.
+                            </p>
+                        </div>
+                </section>
+
+                <section class="m3-padding-2x">
+                    <h4 id="TryOut">
+                        <a href="#TryOut" 
+                        class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Try Out!
+                    </h4>
+                    <p>Here are some things you can do with these components:</p>
+
+                    <ol class="m3-list">
+                        <li>Interactive Alerts
+                            <span class="m3-accordion m3-silver m3-small" style="padding: 5px;">Show me!</span>
+                            <div class="m3-panel">
+                                <div class="m3-container-fw m3-padding-top-2x">
+                                    <p>
+                                        Success confirmation<br>
+                                        <span class="m3-small">Copy the code and check out!</span>
+                                    </p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('SuccessConfHtml');"></button><code id='SuccessConfHtml'>
+&lt;div class="m3-alert m3-text-center" style="padding: 0;">
+    &lt;article class="m3-padding-2x">
+        &lt;span class="m3-icon">🥳&lt;/span>
+        &lt;h5>Success!&lt;/h5>
+        &lt;p class="m3-text-grey">You have earned 5 potatoes.&lt;/p>
+        &lt;button class="m3-btn m3-round-2x m3-blue">GO AHEAD&lt;/button>
+    &lt;/article>
+&lt;/div>
+
+</code></pre>
+                                    <p>
+                                        Friend request<br>
+                                        <span class="m3-small">Copy the code and check out!</span>
+                                    </p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('FriendRequestHtml');"></button><code id='FriendRequestHtml'>
+&lt;div class="m3-alert m3-border">
+    &lt;button class="m3-close m3-small" onclick="this.parentElement.classList.add('m3-animate-bounce-out');">
+        Close
+    &lt;/button>
+    &lt;div class="m3-media items-center">
+        &lt;img src="http://placekitten.com/70/70" class="m3-media-figure m3-circle">
+        &lt;div class="m3-media-content m3-text-left m3-margin-left">
+            &lt;b>Social Net:&lt;/b>
+            &lt;p class="m3-large">Meow Tastic&lt;br> has accepted your friend request!&lt;/p>
+        &lt;/div>
+    &lt;/div>
+        
+    &lt;div class="m3-input m3-border m3-large m3-round-2x m3-light-gray m3-horizontal-margin">
+        &lt;input type="text" class="m3-input-field" placeholder="Say hello to your new friend!">
+        &lt;button class="far fa-paper-plane m3-input-item">&lt;/button>
+    &lt;/div>
+&lt;/div>
+
+</code></pre>
+                                    <p>
+                                        Post inside alert<br>
+                                        <span class="m3-small">Copy the code and check out!</span>
+                                    </p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('PostAlertHtml');"></button><code id='PostAlertHtml'>
+&lt;div class=&quot;m3-alert&quot; id='PostAlert' style=&quot;padding: 0;&quot;&gt; 
+    &lt;div class=&quot;m3-text-right m3-padding m3-space-gray&quot;&gt; 
+        &lt;button class=&quot;m3-small far fa-window-minimize&quot;&gt;&lt;/button&gt; 
+        &lt;button class=&quot;m3-small far fa-window-maximize&quot;&gt;&lt;/button&gt; 
+        &lt;button class=&quot;m3-small fas fa-times&quot; onclick=&quot;document.getElementById('PostAlert').classList.add('m3-animate-bounce-out');&quot;&gt;&lt;/button&gt; 
+    &lt;/div&gt; 
+    &lt;div class=&quot;m3-media items-center m3-border-bottom&quot; style=&quot;margin-bottom: 0;&quot;&gt; 
+        &lt;img src=&quot;http://placekitten.com/30/30&quot; class=&quot;m3-media-figure m3-circle&quot;&gt; 
+        &lt;div class=&quot;m3-media-content&quot;&gt; 
+            &lt;b&gt;UserNameXCool&lt;/b&gt; 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+    &lt;iframe class=&quot;m3-center-block&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Hn4sfC2PbhI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt; 
+    &lt;div class=&quot;m3-btn-group&quot;&gt; 
+        &lt;button class=&quot;far fa-heart&quot;&gt;&lt;/button&gt; 
+        &lt;button class=&quot;far fa-comment&quot;&gt;&lt;/button&gt; 
+        &lt;button class=&quot;far fa-paper-plane&quot;&gt;&lt;/button&gt; 
+    &lt;/div&gt; 
+    &lt;div class=&quot;m3-container m3-vertical-padding&quot;&gt; 
+        &lt;p&gt; 
+            &lt;b&gt;Likes: 285 311&lt;/b&gt; &lt;br&gt; 
+            &lt;span&gt;&lt;b&gt;UserNameXCool&lt;/b&gt; New Song! 🎶&lt;/span&gt; &lt;br&gt; 
+            &lt;a href=&quot;#&quot; class=&quot;m3-text-grey&quot;&gt;See all comments (1664)&lt;/a&gt; 
+        &lt;/p&gt; 
+        &lt;div class=&quot;m3-media items-center&quot;&gt; 
+            &lt;img src=&quot;http://placekitten.com/30/30&quot; class=&quot;m3-media-figure m3-circle&quot;&gt; 
+            &lt;div class=&quot;m3-media-content&quot;&gt; 
+                &lt;div class=&quot;m3-input&quot;&gt; 
+                    &lt;input type=&quot;text&quot; class=&quot;m3-input-field&quot; placeholder=&quot;Write something.&quot;&gt; 
+                &lt;/div&gt; 
+            &lt;/div&gt; 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+&lt;/div&gt;
+
+</code></pre>
+                                
+                                </div>
+
+
+                            </div>
+                        </li>
+                        <li>Alerts inside sections
+                            <span class="m3-accordion m3-silver m3-small" style="padding: 5px;">Show me!</span>
+                            <div class="m3-panel">
+                                <div class="m3-container-fw m3-padding-top-2x">
+                                    <article class="m3-padding-2x m3-red m3-margin-bottom">
+                                        Danger! Indicates a dangerous or potentially negative action. 
+                                    </article>
+
+                                    <article class="m3-padding-2x m3-green m3-margin-bottom">
+                                        Success! Indicates a successful or positive action. 
+                                    </article>
+
+                                    <article class="m3-padding-2x m3-skyblue m3-margin-bottom">
+                                        Info! Indicates a neutral informative change or action.  
+                                    </article>
+
+                                    <article class="m3-padding-2x m3-gold">
+                                        Warning! Indicates a warning that might need attention. 
+                                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('AlertsInsideHtml');"></button><code id='AlertsInsideHtml'>
+&lt;article class="m3-padding-2x m3-red">
+    Danger! Indicates a dangerous or potentially negative action. 
+&lt;/article>
+
+&lt;article class="m3-padding-2x m3-green">
+    Success! Indicates a successful or positive action. 
+&lt;/article>
+
+&lt;article class="m3-padding-2x m3-skyblue">
+    Info! Indicates a neutral informative change or action.  
+&lt;/article>
+
+&lt;article class="m3-padding-2x m3-gold">
+    Warning! Indicates a warning that might need attention. 
+&lt;/article>
+
+</code></pre>
+                                    <p class="m3-tiny">
+                                        <span class="m3-tag m3-gradient-grape">Requires Font Awesome</span>
+                                    </p>
+                                    <article class="m3-padding m3-white m3-bar-left m3-border-red m3-shadow-2 m3-margin-bottom">
+                                        <div class="m3-media items-center">
+                                            <i class="far fa-times-circle fa-2x m3-text-red m3-media-figure"></i>
+                                            <div class="m3-media-content">
+                                                <b>Danger!</b> <br> 
+                                                Indicates a dangerous or potentially negative action.
+                                            </div>
+                                        </div> 
+                                    </article>
+
+                                    <article class="m3-padding m3-white m3-bar-left m3-border-emerald m3-shadow-2 m3-margin-bottom">
+                                        <div class="m3-media items-center">
+                                            <i class="far fa-check-circle fa-2x m3-text-emerald m3-media-figure"></i>
+                                            <div class="m3-media-content">
+                                                <b>Success!</b> <br> 
+                                                Indicates a successful or positive action.
+                                            </div>
+                                        </div> 
+                                    </article>
+
+                                    <article class="m3-padding m3-white m3-bar-left m3-border-blue m3-shadow-2 m3-margin-bottom">
+                                        <div class="m3-media items-center">
+                                            <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i>
+                                            <div class="m3-media-content">
+                                                <b>Info!</b> <br> 
+                                                Indicates a neutral informative change or action. 
+                                            </div>
+                                        </div> 
+                                    </article>
+
+                                    <article class="m3-padding m3-white m3-bar-left m3-border-gold m3-shadow-2 m3-margin-bottom">
+                                        <div class="m3-media items-center">
+                                            <i class="fas fa-biohazard fa-2x m3-text-gold m3-media-figure"></i>
+                                            <div class="m3-media-content">
+                                                <b>Warning!</b> <br> 
+                                                Indicates a warning that might need attention. 
+                                            </div>
+                                        </div> 
+                                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('AlertsInsideHtml');"></button><code id='AlertsInsideHtml'>
+&lt;article class=&quot;m3-padding m3-white m3-bar-left m3-border-red m3-shadow-2 m3-margin-bottom&quot;&gt; 
+    &lt;div class=&quot;m3-media items-center&quot;&gt; 
+        &lt;i class=&quot;far fa-times-circle fa-2x m3-text-red m3-media-figure&quot;&gt;&lt;/i&gt; 
+        &lt;div class=&quot;m3-media-content&quot;&gt; 
+            &lt;b&gt;Danger!&lt;/b&gt; &lt;br&gt; Indicates a dangerous or potentially negative action. 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+&lt;/article&gt; 
+
+&lt;article class=&quot;m3-padding m3-white m3-bar-left m3-border-emerald m3-shadow-2 m3-margin-bottom&quot;&gt; 
+    &lt;div class=&quot;m3-media items-center&quot;&gt; 
+        &lt;i class=&quot;far fa-check-circle fa-2x m3-text-emerald m3-media-figure&quot;&gt;&lt;/i&gt; 
+        &lt;div class=&quot;m3-media-content&quot;&gt; 
+            &lt;b&gt;Success!&lt;/b&gt; &lt;br&gt; Indicates a successful or positive action. 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+&lt;/article&gt; 
+
+&lt;article class=&quot;m3-padding m3-white m3-bar-left m3-border-blue m3-shadow-2 m3-margin-bottom&quot;&gt; 
+    &lt;div class=&quot;m3-media items-center&quot;&gt; 
+        &lt;i class=&quot;fas fa-info-circle fa-2x m3-text-blue m3-media-figure&quot;&gt;&lt;/i&gt; 
+        &lt;div class=&quot;m3-media-content&quot;&gt; 
+            &lt;b&gt;Info!&lt;/b&gt; &lt;br&gt; Indicates a neutral informative change or action.  
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+&lt;/article&gt; 
+
+&lt;article class=&quot;m3-padding m3-white m3-bar-left m3-border-gold m3-shadow-2 m3-margin-bottom&quot;&gt; 
+    &lt;div class=&quot;m3-media items-center&quot;&gt; 
+        &lt;i class=&quot;fas fa-biohazard fa-2x m3-text-gold m3-media-figure&quot;&gt;&lt;/i&gt; 
+        &lt;div class=&quot;m3-media-content&quot;&gt; 
+            &lt;b&gt;Warning!&lt;/b&gt; &lt;br&gt; Indicates a warning that might need attention.  
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+&lt;/article&gt;
+
+</code></pre>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>Styled Notifications
+                            <span class="m3-accordion m3-silver m3-small" style="padding: 5px;">Show me!</span>
+                            <div class="m3-panel">
+                                <div class="m3-container-fw m3-padding-top-2x">
+                                    <p>
+                                        WhatsApp Notification <br>
+                                        <span class="m3-text-gradient-splash m3-small m3-bold">Font Awesome used for the WhatsApp logo</span> <br>
+                                        <span class="m3-small">Copy the code and check out!</span>
+                                    </p>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('WSNotifHtml');"></button><code id='WSNotifHtml'>
+&lt;div class="m3-notification m3-white">
+    &lt;span class="m3-text-gray">
+        &lt;i class="fab fa-whatsapp m3-text-green">&lt;/i> Whatsapp 
+        - Now &lt;i class="fas fa-caret-down">&lt;/i>
+    &lt;/span>
+    
+    &lt;section class="m3-media items-center" style="margin-bottom: 0;">
+        &lt;img src="http://placekitten.com/40/40" class="m3-media-figure m3-circle">
+        &lt;article class="m3-media-content">
+            &lt;b>UserNameXCool&lt;/b> &lt;br>
+            &lt;span>Some text...&lt;/span>
+        &lt;/article>
+    &lt;/section>
+    &lt;article class="m3-text-emerald m3-bold">
+        &lt;button>Answer&lt;/button>
+        &lt;button>Mark as read&lt;/button>
+    &lt;/article>
+&lt;/div>
+
+</code></pre>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <article class="m3-right" style="max-width: 800px;"> 
+                        <div class="m3-media items-center m3-small"> 
+                            <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                            <div class="m3-media-content"> 
+                                <b>Reminder:</b> 
+                                The colors used in this documentation are part of M3 Colors. <br>
+                                If you don't require our library, remember to replace each color with your own.
+                            </div> 
+                        </div> 
+                    </article>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function ShowEx(typ){
+            if(typ==1){
+                const m3_alert = document.createElement("div");
+                m3_alert.className = "m3-alert m3-gradient-space m3-text-center";
+                const close_btn = document.createElement("a");
+                close_btn.className = 'm3-close';
+                close_btn.innerText = "Close";
+                m3_alert.innerHTML += "<div class='m3-padding-2x m3-huge'><span class='m3-icon m3-huge'>😎</span><p>You are cool!</p></div>";
+                
+                m3_alert.appendChild(close_btn);
+                close_btn.addEventListener("click", function(){close_btn.parentElement.className += ' m3-animate-bounce-out '});
+                document.body.append(m3_alert);
+                
+            } else if(typ==2){
+                const m3_notification = document.createElement("div");
+                m3_notification.className = "m3-notification m3-space-gray";
+                m3_notification.innerHTML += "<span class='m3-large'>You're cool! 😎</span>";
+                document.body.append(m3_notification);
+            }
+        }
+    </script>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

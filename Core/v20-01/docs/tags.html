@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tags | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 1024px){ #main{margin-left: 0;}}
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a class="m3-text-skyblue">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Code">♦️ Code</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-skyblue">Pure CSS</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Tags - Badges (or Labels)</h4>
+                    <p>
+                        Tags can notify you that there are new or unread notifications. They can also be used to display cool messages, among other things.
+                        There is only one class provided for the creation of this component (badges, tags, labels. They all mean the same in here).
+                        You can make a tag look like a pill if you add the <code class="m3-dark">.m3-circle</code> class to it.
+                    </p>
+
+                    <div class="m3-container-fw">
+                        <section>
+                            <h5>Tags inside lists</h5>
+                            <ul class="m3-list bordered" style="max-width: 500px;">
+                                <li>We're number one! <span class="m3-tag m3-gradient-splash m3-circle">7 New</span></li>
+                                <li>I'm two but I have a very long name <span class="m3-tag m3-wine">Hot! <i class="fas fa-fire-alt m3-text-orange"></i></span></li>
+                                <li>Simply three <span class="m3-tag m3-transparent m3-border">Lol :)</span></li>
+                            </ul>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>Tags as signs</h5>
+                            <article>
+                                <span class="m3-tag m3-blue-gray">
+                                    <span class="m3-tag m3-transparent m3-border m3-border-white ">Красная улица</span>
+                                </span>
+                                <span class="m3-tag m3-red m3-circle">
+                                    <span class="m3-tag m3-transparent m3-circle m3-border m3-border-white">STOP</span>
+                                </span>
+                                <span class="m3-tag m3-gold m3-round">
+                                    <i class="fas fa-exclamation-triangle fa-2x m3-text-yellow m3-padding"></i>
+                                </span>
+                                <span class="m3-tag m3-dark-gray m3-round">
+                                    <i class="fas fa-cog fa-spin fa-2x m3-text-grey m3-padding"></i>
+                                </span>
+                            </article>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>Letter Tags</h5>
+                            <article class="m3-huge">
+                                <div>
+                                    <span class="m3-tag">A</span>
+                                    <span class="m3-tag">W</span>
+                                    <span class="m3-tag">E</span>
+                                    <span class="m3-tag">S</span>
+                                    <span class="m3-tag">O</span>
+                                    <span class="m3-tag">M</span>
+                                    <span class="m3-tag">E</span>
+                                </div>
+                                <div class="m3-margin-top">
+                                    <span class="m3-tag">L</span>
+                                    <span class="m3-tag">I</span>
+                                    <span class="m3-tag">F</span>
+                                    <span class="m3-tag">E</span>
+                                    <span class="m3-tag">💕</span>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>Icon Tags</h5>
+                            <article>
+                                <div>
+                                    <a href="javascript:void(0);" class="m3-margin-right-2x">
+                                        <span class="m3-tag m3-emerald far fa-money-bill-alt"></span> <b>Donate</b>
+                                    </a>
+                                    <a href="javascript:void(0);" class="m3-margin-right-2x">
+                                        <span class="m3-tag m3-grey fas fa-code-branch"></span> <b>Build</b>
+                                    </a>
+                                    <a href="javascript:void(0);">
+                                        <span class="m3-tag m3-pink fas fa-share"></span> <b>Share</b>
+                                    </a>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>Tags as captions</h5>
+                            <article class="">
+                                <div class="m3-row no-gutters">
+                                    <div class="m3-item">
+                                        <article class="m3-container-fw">
+                                            <img src="https://picsum.photos/640/360" alt="Random Image">
+                                            <span class="m3-tag m3-display-bottom-right m3-grey crystal">640x360</span>
+                                        </article>
+                                    </div>
+                                    <div class="m3-item">
+                                        <article class="m3-container-fw">
+                                            <img src="https://picsum.photos/id/1018/640/360/" alt="Image">
+                                            <span class="m3-tag m3-large m3-display-middle m3-teal crystal">Beautiful Landscape</span>
+                                        </article>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+
+                    <div class="m3-padding m3-vertical-margin-3x m3-grey m3-shadow-2" id="Code">
+                        <h5 class="m3-margin">Basic tag:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagBasicHtml');"></button><code id='TagBasicHtml'>
+&lt;span class="m3-tag">Hello!&lt;/span>
+
+</code></pre>
+
+                        </div>
+
+                        <h5 class="m3-margin">Round tag:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagRoundtml');"></button><code id='TagRoundHtml'>
+&lt;span class="m3-tag m3-circle">Hello!&lt;/span>
+
+</code></pre>
+
+                        </div>
+
+                        <h5 class="m3-margin"> Tags inside lists:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-text-white m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagListHtml');"></button><code id='TagListHtml'>
+&lt;ul class="m3-list bordered">
+    &lt;li>We're number one! &lt;span class="m3-tag m3-gradient-splash m3-circle">7 New&lt;/span>&lt;/li>
+    &lt;li>
+        I'm two but I have a very long name 
+        &lt;span class="m3-tag m3-wine">Hot! 
+            &lt;i class="fas fa-fire-alt m3-text-orange">&lt;/i>
+        &lt;/span>
+    &lt;/li>
+    &lt;li>Simply three &lt;span class="m3-tag m3-transparent m3-border">Lol :)&lt;/span>&lt;/li>
+&lt;/ul>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin"> Tags as signs:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-text-white m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagSignHtml');"></button><code id='TagSignHtml'>
+&lt;span class="m3-tag m3-blue-gray">
+    &lt;span class="m3-tag m3-transparent m3-border m3-border-white">Красная улица&lt;/span>
+&lt;/span>
+
+&lt;span class="m3-tag m3-red m3-circle">
+    &lt;span class="m3-tag m3-transparent m3-circle m3-border m3-border-white">STOP&lt;/span>                                
+&lt;/span>
+
+&lt;span class="m3-tag m3-gold m3-round">
+    &lt;i class="fas fa-exclamation-triangle fa-2x m3-text-yellow m3-padding">&lt;/i>
+&lt;/span>
+
+&lt;span class="m3-tag m3-dark-gray m3-round">
+    &lt;i class="fas fa-cog fa-spin fa-2x m3-text-grey m3-padding">&lt;/i>
+&lt;/span>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin"> Letter Tags:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-text-white m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagLetterHtml');"></button><code id='TagLetterHtml'>
+&lt;div>     
+    &lt;span class="m3-tag">A&lt;/span>
+    &lt;span class="m3-tag">W&lt;/span>
+    &lt;span class="m3-tag">E&lt;/span>
+    &lt;span class="m3-tag">S&lt;/span>
+    &lt;span class="m3-tag">O&lt;/span>
+    &lt;span class="m3-tag">M&lt;/span>
+    &lt;span class="m3-tag">E&lt;/span>
+&lt;/div>
+
+&lt;div class="m3-margin-top">
+    &lt;span class="m3-tag">L&lt;/span>
+    &lt;span class="m3-tag">I&lt;/span>
+    &lt;span class="m3-tag">F&lt;/span>
+    &lt;span class="m3-tag">E&lt;/span>
+    &lt;span class="m3-tag">💕&lt;/span>
+&lt;/div>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin"> Icon Tags:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-text-white m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagIconHtml');"></button><code id='TagIconHtml'>
+&lt;a href="#" class="m3-margin-right-2x">
+    &lt;span class="m3-tag m3-emerald far fa-money-bill-alt">&lt;/span> &lt;b>Donate&lt;/b>
+&lt;/a>
+                                    
+&lt;a href="#" class="m3-margin-right-2x">
+    &lt;span class="m3-tag m3-grey fas fa-code-branch">&lt;/span> &lt;b>Build&lt;/b>
+&lt;/a>
+                                   
+&lt;a href="#">
+    &lt;span class="m3-tag m3-pink fas fa-share">&lt;/span> &lt;b>Share&lt;/b>
+&lt;/a>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin"> Tags as captions:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-text-white m3-right m3-margin-right far fa-copy" onclick="CopyClip('TagCaptionHtml');"></button><code id='TagCaptionHtml'>
+&lt;div class="m3-row">
+    &lt;div class="m3-item">
+        &lt;article class="m3-container-fw">
+            &lt;img src="https://picsum.photos/640/360" alt="Random Image">
+            &lt;span class="m3-tag m3-display-bottom-right m3-grey crystal">640x360&lt;/span>
+        &lt;/article>
+    &lt;/div>
+                                    
+    &lt;div class="m3-item">
+        &lt;article class="m3-container-fw">
+            &lt;img src="https://picsum.photos/id/1018/640/360/" alt="Image">
+            &lt;span class="m3-tag m3-large m3-display-middle m3-teal crystal">Beautiful Landscape&lt;/span>
+        &lt;/article>
+    &lt;/div>
+&lt;/div>
+
+</code></pre>
+                        </div>
+
+                    </div>
+                </section>
+
+                    <article class="m3-right" style="max-width: 800px;"> 
+                        <div class="m3-media items-center m3-small"> 
+                            <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                            <div class="m3-media-content"> 
+                                <b>Reminder:</b> 
+                                The colors used in this documentation are part of M3 Colors. <br>
+                                If you don't require our library, remember to replace each color with your own.
+                            </div> 
+                        </div> 
+                    </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

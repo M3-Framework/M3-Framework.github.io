@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Buttons | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a class="m3-text-skyblue">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Code">♦️ Code</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#ChangeSize">♦️ Change Size</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#BtnGroup">♦️ Button Group</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-skyblue">Pure CSS</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Buttons</h4>
+                    <p>
+                        A button is a fundamental UI element that will heavily affect your interaction design. Buttons have the power to compel users to convert, to carry out an action.
+                    </p>
+
+                    <div class="m3-container">
+                        <section class="m3-margin-top-4x">
+                            <h5>Default Style</h5>
+                            <p>By default, a &lt;button&gt; will look like this:
+                                <button>Button</button>
+                                <button>Another Button</button>
+                            </p>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>M3 Button</h5>
+                            <p>Give some style to your button by adding the class <code class="m3-dark">.m3-btn</code></p>
+                            <p>Result:</p>
+                            <button class="m3-btn">Button</button>
+                            <a class="m3-btn">Link</a>
+
+                            <p class="m3-margin-top-3x">Add the class <b>.no-margin</b> to an <b>.m3-btn</b> to take out its margins.</p>
+                            <code class="m3-dark" style="font-size: 100%;">class="m3-btn no-margin"</code>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>Bordered Button</h5>
+                            <p>
+                                Add the class <code class="m3-dark">.m3-transparent</code> to take out the background.
+                                Then proceed to add a border using the class <b>.m3-border</b> or use the class <b>.m3-bar</b> for thick borders.
+                            </p>
+                            <p>Result:</p>
+                            <button class="m3-btn m3-transparent m3-border">Button with normal border</button>
+                            <button class="m3-btn m3-transparent m3-bar"><b>Button with thick border</b></button>
+                        </section>
+
+                        <section class="m3-margin-top-4x">
+                            <h5>Round Buttons</h5>
+                            <p>
+                                Add the class <b>.m3-round</b> or <b>.m3-circle</b> to apply roundness.
+                            </p>
+                            <p>Result:</p>
+                            <button class="m3-btn m3-round">Round Borders</button>
+                            <button class="m3-btn m3-circle"><i class="fas fa-plus"></i></button>
+                            <button class="m3-btn m3-circle"><i class="fas fa-home"></i></button>
+                            <button class="m3-btn m3-circle m3-blue"><i class="fas fa-download"></i></button>
+                            <button class="m3-btn m3-circle m3-pink">❤️</button>
+                        </section>
+
+                        <section class="m3-margin-top-2x">
+                            <p>You can give some life to these buttons using M3 Colors</p>
+                            <div>
+                                <button class="m3-btn m3-orange">Orange</button>
+                                <button class="m3-btn m3-purple">Purple</button>
+                                <button class="m3-btn m3-teal">Teal</button>
+                                <button class="m3-btn m3-blue-gray">Blue Gray</button>
+                            </div>
+                            <div>
+                                <button class="m3-btn m3-transparent m3-border m3-border-orange m3-text-orange">Orange</button>
+                                <button class="m3-btn m3-transparent m3-border m3-border-purple m3-text-purple">Purple</button>
+                                <button class="m3-btn m3-transparent m3-border m3-border-teal m3-text-teal">Teal</button>
+                                <button class="m3-btn m3-transparent m3-border m3-border-blue-gray m3-text-blue-gray">Blue Gray</button>
+                            </div>
+                            <div>
+                                <button class="m3-btn m3-hover-orange">Hover Orange</button>
+                                <button class="m3-btn m3-hover-purple">Hover Purple</button>
+                                <button class="m3-btn m3-hover-teal">Hover Teal</button>
+                                <button class="m3-btn m3-hover-blue-gray">Hover Blue Gray</button>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="m3-padding m3-vertical-margin-3x m3-grey m3-shadow-2" id="Code">
+                        <h5 class="m3-margin">Default button:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnDefaultHtml');"></button><code id='BtnDefaultHtml'>
+&lt;button>I'm transparent and sexy!&lt;/button>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin">Basic button:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnBasicHtml');"></button><code id='BtnBasicHtml'>
+&lt;button class="m3-btn">Button&lt;/button>
+&lt;a class="m3-btn">Link&lt;/a>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin">Bordered button:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnBorderedHtml');"></button><code id='BtnBorderedHtml'>
+&lt;button class="m3-btn m3-transparent m3-border">Button&lt;/button>
+&lt;button class="m3-btn m3-transparent m3-bar">&lt;b>Button with thick border&lt;/b>&lt;/button>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin">Round button:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnBorderedHtml');"></button><code id='BtnBorderedHtml'>
+&lt;button class="m3-btn m3-round">Round Button&lt;/button>
+&lt;button class="m3-btn m3-circle">❤️&lt;/button>
+
+</code></pre>
+                        </div>
+
+                        <h5 class="m3-margin">Buttons using M3 Colors:</h5>
+                        <div class="m3-container-fw">
+<pre class="html-dark"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnColorsHtml');"></button><code id='BtnColorsHtml'>
+&lt;button class="m3-btn m3-orange">Orange&lt;/button>
+&lt;button class="m3-btn m3-purple">Purple&lt;/button>
+&lt;button class="m3-btn m3-teal">Teal&lt;/button>
+&lt;button class="m3-btn m3-blue-gray">Blue Gray&lt;/button>
+
+&lt;button class="m3-btn m3-transparent m3-border m3-border-orange m3-text-orange">Orange&lt;/button>
+&lt;button class="m3-btn m3-transparent m3-border m3-border-purple m3-text-purple">Purple&lt;/button>
+&lt;button class="m3-btn m3-transparent m3-border m3-border-teal m3-text-teal">Teal&lt;/button>
+&lt;button class="m3-btn m3-transparent m3-border m3-border-blue-gray m3-text-blue-gray">Blue Gray&lt;/button>
+
+&lt;button class="m3-btn m3-hover-orange">Hover Orange&lt;/button>
+&lt;button class="m3-btn m3-hover-purple">Hover Purple&lt;/button>
+&lt;button class="m3-btn m3-hover-teal">Hover Teal&lt;/button>
+&lt;button class="m3-btn m3-hover-blue-gray">Hover Blue Gray&lt;/button>
+
+</code></pre>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="m3-padding-2x" id="ChangeSize">
+                    <h4>
+                        <a href="#ChangeSize" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Changing Size</h4>
+                    <p>Use any of the <b>.m3-size</b> classes to change the size of a button</p>
+
+                    <button class="m3-btn m3-tiny">Tiny</button>
+                    <button class="m3-btn m3-small">Small</button>
+                    <button class="m3-btn">Normal</button>
+                    <button class="m3-btn m3-large">Large</button>
+                    <button class="m3-btn m3-huge">Huge</button>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnSizeHtml');"></button><code id='BtnSizeHtml'>
+&lt;button class="m3-btn m3-tiny">Tiny&lt;/button>
+&lt;button class="m3-btn m3-small">Small&lt;/button>
+&lt;button class="m3-btn m3-large">Large&lt;/button>
+&lt;button class="m3-btn m3-huge">Huge&lt;/button>
+
+</code></pre>
+                </section>
+
+
+                <section class="m3-padding-2x" id="BtnGroup">
+                    <h4>
+                        <a href="#BtnGroup" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Button Group</h4>
+                    <p>Wrap your buttons inside a <b>.m3-btn-group</b> container and it will look like this:</p>
+
+                    <div class="m3-btn-group">
+                        <button class="m3-btn">Button 1</button>
+                        <button class="m3-btn">Button 2</button>
+                        <button class="m3-btn">Button 3</button>
+                        <button class="m3-btn">Button 4</button>
+                    </div>
+
+                    <div class="m3-btn-group">
+                        <button class="m3-btn m3-hover-gray fas fa-arrow-left"></button>
+                        <button class="m3-btn m3-hover-blue-gray fas fa-home"></button>
+                        <button class="m3-btn m3-hover-red fas fa-bars"></button>
+                    </div>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BtnGroupHtml');"></button><code id='BtnGroupHtml'>
+&lt;div class="m3-btn-group">
+    &lt;button class="m3-btn">Button 1&lt;/button>
+    &lt;button class="m3-btn">Button 2&lt;/button>
+    &lt;button class="m3-btn">Button 3&lt;/button>
+    &lt;button class="m3-btn">Button 4&lt;/button>
+&lt;/div>
+
+</code></pre>
+                </section>
+
+                    <article class="m3-right" style="max-width: 800px;"> 
+                        <div class="m3-media items-center m3-small"> 
+                            <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                            <div class="m3-media-content"> 
+                                <b>Reminder:</b> 
+                                The colors used in this documentation are part of M3 Colors. <br>
+                                If you don't require our library, remember to replace each color with your own.
+                            </div> 
+                        </div> 
+                    </article>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

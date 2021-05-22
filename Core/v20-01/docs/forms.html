@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forms | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a class="m3-text-skyblue">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Input">♦️ Input</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Checkbox">♦️ Checkbox</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Radio">♦️ Radio</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Switch">♦️ Switch</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-skyblue">Pure CSS</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Forms</h4>
+                    <p>
+                        Enhanced design for form controls.
+                    </p>
+
+                    <form>
+                        <fieldset class="m3-jumbo m3-border">
+                            <legend class="m3-horizontal-padding m3-text-wine">
+                                Candidate Info
+                            </legend>
+                            
+                            <div class="m3-row no-gutters">
+                                <div class="m3-item">
+                                    <div class="m3-input m3-text-gray m3-silver m3-margin-right-2x">
+                                        <label class="m3-input-item" for="Name" style="margin: 0; padding-right:0;">
+                                            <i class="far fa-user"></i>
+                                            Name:
+                                        </label>
+                                        <input type="text" name="field1" id="Name" class="m3-input-field">
+                                    </div>
+                                </div>
+
+                                <div class="m3-item">
+                                    <div class="m3-input m3-text-gray m3-silver">
+                                        <label class="m3-input-item" for="Email" style="margin: 0; padding-right:0;">
+                                            <i class="far fa-envelope"></i>
+                                            E-mail:
+                                        </label>
+                                        <input type="email" name="field2" id="Email" class="m3-input-field">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <section class="m3-margin-bottom-4x">
+                                <textarea name="field3" class="m3-padding m3-silver"
+                                placeholder="About yourself:"></textarea>
+                            </section>
+                            
+                            <label for="job" class="m3-margin-bottom-2x m3-text-wine">Interests:</label>
+                            <select id="job" name="field4" class="m3-padding m3-silver">
+                                <optgroup label="Indoors">
+                                    <option value="fishkeeping">Fishkeeping</option>
+                                    <option value="reading">Reading</option>
+                                    <option value="boxing">Boxing</option>
+                                    <option value="debate">Debate</option>
+                                    <option value="gaming">Gaming</option>
+                                    <option value="snooker">Snooker</option>
+                                    <option value="other_indoor">Other</option>
+                                </optgroup>
+
+                                <optgroup label="Outdoors">
+                                    <option value="football">Football</option>
+                                    <option value="swimming">Swimming</option>
+                                    <option value="fishing">Fishing</option>
+                                    <option value="climbing">Climbing</option>
+                                    <option value="cycling">Cycling</option>
+                                    <option value="other_outdoor">Other</option>
+                                </optgroup>
+                            </select>
+
+                            <div class="m3-margin-top-4x m3-text-right">
+                                <button class="m3-btn m3-wine">
+                                    <i class="far fa-paper-plane"></i> Send
+                                </button>
+                                <button class="m3-btn m3-silver" type="reset">
+                                    Clear
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                    
+
+                    <article class="m3-padding m3-grey m3-margin-top-4x">
+                        <h5 class="m3-margin">Example:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('FormExHtml');"></button><code id='FormExHtml'>
+&lt;form>
+    &lt;fieldset class="m3-jumbo m3-border">
+        &lt;legend class="m3-horizontal-padding m3-text-wine">Candidate Info&lt;/legend>
+        
+        &lt;div class="m3-row no-gutters">
+            &lt;div class="m3-item">
+                &lt;div class="m3-input m3-text-gray m3-silver m3-margin-right-2x">
+                    &lt;label class="m3-input-item" for="Name" style="margin: 0; padding-right:0;">
+                        &lt;i class="far fa-user">&lt;/i> Name:
+                    &lt;/label>
+                    &lt;input type="text" name="field1" id="Name" class="m3-input-field">
+                &lt;/div>
+            &lt;/div>
+
+            &lt;div class="m3-item">
+                &lt;div class="m3-input m3-text-gray m3-silver">
+                    &lt;label class="m3-input-item" for="Email" style="margin: 0; padding-right:0;">
+                        &lt;i class="far fa-envelope">&lt;/i> E-mail:
+                    &lt;/label>
+                    &lt;input type="email" name="field2" id="Email" class="m3-input-field">
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+        
+        &lt;section class="m3-margin-bottom-4x">
+            &lt;textarea name="field3" class="m3-padding m3-silver"
+            placeholder="About yourself:">&lt;/textarea>
+        &lt;/section>
+        
+        &lt;label for="job" class="m3-margin-bottom-2x m3-text-wine">Interests:&lt;/label>
+        &lt;select id="job" name="field4" class="m3-padding m3-silver">
+            &lt;optgroup label="Indoors">
+                &lt;option value="reading">Reading&lt;/option>
+                &lt;option value="debate">Debate&lt;/option>
+                &lt;option value="gaming">Gaming&lt;/option>
+            &lt;/optgroup>
+
+            &lt;optgroup label="Outdoors">
+                &lt;option value="football">Football&lt;/option>
+                &lt;option value="swimming">Swimming&lt;/option>
+                &lt;option value="fishing">Fishing&lt;/option>
+            &lt;/optgroup>
+        &lt;/select>
+
+        &lt;div class="m3-margin-top-4x m3-text-right">
+            &lt;button class="m3-btn m3-wine">&lt;i class="far fa-paper-plane">&lt;/i> Send&lt;/button>
+            &lt;button class="m3-btn m3-silver" type="reset">Clear&lt;/button>
+        &lt;/div>
+    &lt;/fieldset>
+&lt;/form>
+
+</code></pre>
+                    </article>
+                </section>
+
+                <section class="m3-padding-2x m3-margin-top-4x" id="Input">
+                    <h4>
+                        <a href="#Input" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Input</h4>
+                    <p>Field where the user can enter data.</p>
+
+                    <div class="m3-row">
+                        <div class="m3-item">
+                            <article class="m3-gradient-space m3-padding-2x m3-round m3-shadow-2 m3-margin-bottom-2x" 
+                            style="max-width: 500px;">
+                                <header class="m3-text-center">
+                                    <i class="fas fa-cloud fa-3x"></i>
+                                    <h3>CLOUD</h3>
+                                </header>
+
+                                <div class="m3-input m3-border-bottom">
+                                    <label for="UserEx" class="m3-input-item"
+                                    style="padding-right: 0;"><i class="far fa-envelope"></i></label>
+                                    <input type="email" id="UserEx" class="m3-input-field" placeholder="Username">
+                                </div>
+                                <div class="m3-input m3-border-bottom">
+                                    <label for="PwdEx" class="m3-input-item"
+                                    style="padding-right: 0;"><i class="fas fa-lock"></i></label>
+                                    <input type="password" id="PwdEx" class="m3-input-field" placeholder="Password">
+                                </div>
+
+                                <button class="m3-btn no-margin m3-skyblue crystal-3 m3-w-100">LOG IN</button>
+                            </article>
+
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><span class="m3-margin">Basic Input</span><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('InputBasicHtml');"></button><code id='InputBasicHtml'>
+&lt;div class="m3-input m3-border">
+    &lt;input type="text" class="m3-input-field" placeholder="Input Example">
+    &lt;button class="m3-input-item m3-btn no-margin">Search&lt;/button>
+&lt;/div>
+
+</code></pre>
+                        </div>
+                        <div class="m3-item">
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><span class="m3-margin">Example's Code</span><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('InputExHtml');"></button><code id='InputExHtml'>
+&lt;article class="m3-gradient-space m3-padding-2x">
+    &lt;header class="m3-text-center">
+        &lt;i class="fas fa-cloud fa-3x">&lt;/i>
+        &lt;h3>CLOUD&lt;/h3>
+    &lt;/header>
+
+    &lt;div class="m3-input m3-border-bottom">
+        &lt;label for="UserEx" class="m3-input-item" style="padding-right: 0;">
+            &lt;i class="far fa-envelope">&lt;/i>
+        &lt;/label>
+        &lt;input type="email" id="UserEx" class="m3-input-field" placeholder="Username">
+    &lt;/div>
+
+    &lt;div class="m3-input m3-border-bottom">
+        &lt;label for="PwdEx" class="m3-input-item" style="padding-right: 0;">
+            &lt;i class="fas fa-lock">&lt;/i>
+        &lt;/label>
+        &lt;input type="password" id="PwdEx" class="m3-input-field" placeholder="Password">
+    &lt;/div>
+
+    &lt;button class="m3-btn no-margin m3-skyblue crystal-3 m3-w-100">LOG IN&lt;/button>
+&lt;/article>
+
+</code></pre>
+                        </div>
+                    </div>
+
+
+                    <div class="m3-container">
+                        <article>
+                            <h5>Without Classes - Default Style</h5>
+                            <p>Input controls will look like these by default:</p>
+    
+                            <div class="m3-padding">
+                                <div>
+                                    <span class="m3-bold m3-margin-right-2x">Text</span><input type="text" placeholder="Write something">
+                                </div>
+                                <div class="m3-vertical-margin-2x">
+                                    <span class="m3-bold m3-margin-right-2x">E-mail</span><input type="email" placeholder="Write something">
+                                </div>
+                                <div>
+                                    <span class="m3-bold m3-margin-right-2x">Password</span><input type="password" placeholder="Write something">
+                                </div>
+                            </div>
+    
+                            <div class="m3-padding m3-margin-bottom-2x">
+                                <div>
+                                    <span class="m3-bold m3-margin-right-2x">Date</span><input type="date">
+                                </div>
+                                <div class="m3-vertical-margin-2x">
+                                    <span class="m3-bold m3-margin-right-2x">File</span><input type="file">
+                                </div>
+                                <div>
+                                    <span class="m3-bold m3-margin-right-2x">Color</span><input type="color">
+                                </div>
+                            </div>
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NoStyleInputHtml');"></button><code id='NoStyleInputHtml'>
+&lt;input type="password" placeholder="Write something">
+&lt;input type="file">
+
+</code></pre>
+                        </article>
+    
+                        <article class="m3-margin-top-4x">
+                            <h5>Universal Container for Input Controls</h5>
+                            <p>Using the <b>.m3-input</b> container class, any input control can be further customized:</p>
+    
+                            <div class="m3-padding">
+                                <div class="m3-input m3-silver">
+                                    <span class="m3-bold m3-light-gray m3-input-item">Text:</span>
+                                    <input class="m3-input-field" type="text" placeholder="Write something">
+                                </div>
+                                <div class="m3-input m3-silver">
+                                    <span class="m3-bold m3-light-gray m3-input-item">E-mail:</span>
+                                    <input class="m3-input-field" type="email" placeholder="Write something">
+                                </div>
+                                <div class="m3-input m3-silver">
+                                    <span class="m3-bold m3-light-gray m3-input-item">Password:</span>
+                                    <input class="m3-input-field" type="password" placeholder="Write something">
+                                </div>
+                                <div class="m3-input m3-silver">
+                                    <span class="m3-bold m3-light-gray m3-input-item">Date:</span>
+                                    <input class="m3-input-field" type="date">
+                                </div>
+                                <div class="m3-input m3-silver">
+                                    <span class="m3-bold m3-light-gray m3-input-item">File:</span>
+                                    <input class="m3-input-field" type="file">
+                                </div>
+                                <div class="m3-input m3-silver">
+                                    <span class="m3-bold m3-light-gray m3-input-item">Color:</span>
+                                    <input class="m3-input-field" type="color" name="TestColor1" value="#026581">
+                                </div>
+                            </div>
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('InputBackgroundHtml');"></button><code id='InputBackgroundHtml'>
+&lt;div class="m3-input m3-silver">
+    &lt;span class="m3-bold m3-light-gray m3-input-item">Color:&lt;/span>
+    &lt;input class="m3-input-field" type="color" name="TestColor" value="#026581">
+&lt;/div>
+
+</code></pre>
+
+                            <div class="m3-padding">
+                                <div class="m3-input m3-border m3-round-2x">
+                                    <span class="m3-bold m3-input-item m3-round-2x">Text:</span>
+                                    <input class="m3-input-field m3-round-2x" type="text" placeholder="Write something">
+                                </div>
+                                <div class="m3-input m3-border m3-round-2x">
+                                    <span class="m3-bold m3-input-item m3-round-2x">E-mail:</span>
+                                    <input class="m3-input-field m3-round-2x" type="email" placeholder="Write something">
+                                </div>
+                                <div class="m3-input m3-border m3-round-2x">
+                                    <span class="m3-bold m3-input-item m3-round-2x">Password:</span>
+                                    <input class="m3-input-field m3-round-2x" type="password" placeholder="Write something">
+                                </div>
+                                <div class="m3-input m3-border m3-round-2x">
+                                    <span class="m3-bold m3-input-item m3-round-2x">Date:</span>
+                                    <input class="m3-input-field m3-round-2x" type="date">
+                                </div>
+                                <div class="m3-input m3-border m3-round-2x">
+                                    <span class="m3-bold m3-input-item m3-round-2x">File:</span>
+                                    <input class="m3-input-field m3-round-2x" type="file">
+                                </div>
+                                <div class="m3-input m3-border m3-round-2x">
+                                    <span class="m3-bold m3-input-item m3-round-2x">Color:</span>
+                                    <input class="m3-input-field m3-round-2x m3-margin-right" name="TestColor2" type="color" value="#756b1d">
+                                </div>
+                            </div>
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('InputBorderedHtml');"></button><code id='InputBorderedHtml'>
+&lt;div class="m3-input m3-border m3-round-2x">
+    &lt;span class="m3-bold m3-input-item m3-round-2x">Date:&lt;/span>
+    &lt;input class="m3-input-field m3-round-2x" type="date">
+&lt;/div>
+
+</code></pre>
+                        </article>
+                    </div>
+
+                </section>
+
+                <section class="m3-padding-2x" id='Checkbox'>
+                    <h4>
+                        <a href="#Checkbox" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Checkbox</h4>
+                    <p>
+                        An styled checkbox is created by using a label tag with the class <b>.m3-checkbox</b> <br>
+                        They're not simple to customize, but they look better than an ordinary checkbox and have
+                        the same functionality. 
+                    </p>
+
+                    <article class="m3-margin-bottom-3x">
+                        <div class="m3-padding">
+                            <input type="checkbox"> Ordinary Checkbox (Boring)
+                        </div>
+                        <label class="m3-checkbox">M3 Checkbox (Oh yeah! 🔥)
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label> <br>
+
+                        <label class="m3-checkbox">Check using JavaScript
+                            <input type="checkbox" id="TestCheck">
+                            <span class="checkmark m3-red"></span>
+                        </label>
+
+                        <button class="m3-border m3-silver m3-hover-border-skyblue"
+                        onclick="document.getElementById('TestCheck').checked = true;">Check</button>
+
+                        <button class="m3-border m3-silver m3-hover-border-skyblue"
+                        onclick="document.getElementById('TestCheck').checked = false;">Uncheck</button>
+                    </article>
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('CheckboxExHtml');"></button><code id='CheckboxExHtml'>
+&lt;label class="m3-checkbox"> 
+    Some Text
+    &lt;input type="checkbox">
+    &lt;span class="checkmark">&lt;/span>
+&lt;/label>
+
+</code></pre>
+
+                    <article class="m3-container m3-margin-top-3x">
+                        <h5 class="m3-text-center">Further Styling</h5>
+                       
+                        <div class="m3-center">
+                            <p class="">
+                                Unfortunately, customizing a checkbox is not as simple as customizing other components. You will need to change its styles directly.
+                                M3 Colors classes won't have any effect due to the 
+                                <a href="https://developer.mozilla.org/en-US/Web/CSS/Specificity" class="m3-text-blue">selector specificity</a> 
+                                of this component.
+                            </p>
+                        </div>
+
+                        <p><b>Example:</b></p>
+
+                        <style>
+                            .m3-checkbox:hover input ~ .special-checkmark { background-color: #cac6c6;}
+                            .m3-checkbox input:checked ~ .special-checkmark { background-color: #921f62;}
+
+                            .m3-checkbox .dark-checkmark { background: #999;}
+                            .m3-checkbox .dark-checkmark::after { border-color: #84cf47;}
+                            .m3-checkbox:hover input ~ .dark-checkmark { background-color: #666;}
+                            .m3-checkbox input:checked ~ .dark-checkmark { background-color: #333;}
+
+                            .m3-checkbox .random-style { background: #dd973b;}
+                            .m3-checkbox .random-style::after { border-color: #ffbf0f;}
+                            .m3-checkbox:hover input ~ .random-style { background-color: #cf7f7f;}
+                            .m3-checkbox input:checked ~ .random-style { background-color: #c44c4c;}
+                        </style>
+
+                        <label class="m3-checkbox"> Pinky Pink Checkbox
+                            <input type="checkbox">
+                            <span class="checkmark special-checkmark"></span>
+                        </label> <br>
+
+                        <label class="m3-checkbox"> Dark Side
+                            <input type="checkbox">
+                            <span class="checkmark dark-checkmark"></span>
+                        </label> <br>
+
+                        <label class="m3-checkbox"> Random Style
+                            <input type="checkbox">
+                            <span class="checkmark random-style"></span>
+                        </label>
+
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('CheckboxStyling');"></button><code id='CheckboxStyling'>
+&lt;label class="m3-checkbox"> 
+    Some Text
+    &lt;input type="checkbox">
+    &lt;span class="checkmark random-style">&lt;/span>
+&lt;/label>
+
+&lt;style>
+    .m3-checkbox .random-style { background: #dd973b;}  /* Box background color */
+    .m3-checkbox .random-style::after { border-color: #ffbf0f;} /* Checkmark (✔️) color */
+    .m3-checkbox:hover input ~ .random-style { background-color: #cf7f7f;} /* Box background color on hover */
+    .m3-checkbox input:checked ~ .random-style { background-color: #c44c4c;} /* Box background color when checked */
+&lt;/style>
+
+</code></pre>
+                        
+                    </article>
+                </section>
+
+                <section class="m3-padding-2x" id="Radio">
+                    <h4>
+                        <a href="#Radio" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Radio</h4>
+                    <p>
+                        An styled radio is made in the same way as an styled checkbox. <br> 
+                        The only differences are the checkmark sign and the roundness of the box.
+                    </p>
+
+                    <article class="m3-margin-bottom-3x">
+                        <div class="m3-padding">
+                            <input type="radio"> Ordinary Radio (Boring)
+                        </div>
+                        <label class="m3-radio"> M3 Radio (Oh yeah! 🔥)
+                            <input type="radio">
+                            <span class="checkmark"></span>
+                        </label> <br>
+
+                        <label class="m3-radio">Check using JavaScript
+                            <input type="radio" id="TestRadio">
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <button class="m3-border m3-silver m3-hover-border-skyblue"
+                        onclick="document.getElementById('TestRadio').checked = true;">Check</button>
+
+                        <button class="m3-border m3-silver m3-hover-border-skyblue"
+                        onclick="document.getElementById('TestRadio').checked = false;">Uncheck</button>
+                    </article>
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('RadioExHtml');"></button><code id='RadioExHtml'>
+&lt;label class="m3-radio"> 
+    Some Text
+    &lt;input type="radio">
+    &lt;span class="checkmark">&lt;/span>
+&lt;/label>
+
+</code></pre>
+
+                    <article class="m3-container m3-margin-top-3x">
+                        <h5 class="m3-text-center">Further Styling</h5>
+                       
+                        <p class="m3-center">
+                            As expected, customization remains the same way for checkboxes and radios.
+                        </p>
+
+                        <p><b>Example:</b></p>
+
+                        <style>
+                            .m3-radio:hover input ~ .special-checkmark { background-color: #cac6c6;}
+                            .m3-radio input:checked ~ .special-checkmark { background-color: #921f62;}
+
+                            .m3-radio .dark-checkmark { background: #999;}
+                            .m3-radio .dark-checkmark::after { border-color: #84cf47;}
+                            .m3-radio:hover input ~ .dark-checkmark { background-color: #666;}
+                            .m3-radio input:checked ~ .dark-checkmark { background-color: #333;}
+
+                            .m3-radio .random-style { background: #dd973b;}
+                            .m3-radio .random-style::after { border-color: #ffbf0f;}
+                            .m3-radio:hover input ~ .random-style { background-color: #cf7f7f;}
+                            .m3-radio input:checked ~ .random-style { background-color: #c44c4c;}
+                        </style>
+
+                        <label class="m3-radio"> Pinky Pink Radio
+                            <input type="checkbox">
+                            <span class="checkmark special-checkmark"></span>
+                        </label> <br>
+
+                        <label class="m3-radio"> Dark Side
+                            <input type="checkbox">
+                            <span class="checkmark dark-checkmark"></span>
+                        </label> <br>
+
+                        <label class="m3-radio"> Random Style
+                            <input type="checkbox">
+                            <span class="checkmark random-style"></span>
+                        </label>
+
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('RadioStyling');"></button><code id='RadioStyling'>
+&lt;label class="m3-radio">
+    Some Text
+    &lt;input type="radio">
+    &lt;span class="checkmark random-style">&lt;/span>
+&lt;/label>
+
+&lt;style>
+    .m3-radio .random-style { background: #dd973b;}  /* Box background color */
+    .m3-radio .random-style::after { border-color: #ffbf0f;} /* Checkmark (♦️) color */
+    .m3-radio:hover input ~ .random-style { background-color: #cf7f7f;} /* Box background color on hover */
+    .m3-radio input:checked ~ .random-style { background-color: #c44c4c;} /* Box background color when checked */
+&lt;/style>
+
+</code></pre>
+                        
+                    </article>
+                </section>
+
+                <section class="m3-padding-2x" id="Switch">
+                    <h4>
+                        <a href="#Switch" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Switch</h4>
+                    <p>
+                        A switch is basically a checkbox but with a different aspect. <br> 
+                        You can toggle them on/off.
+                    </p>
+
+
+
+                    <article class="m3-margin-bottom-3x">
+                        <label class="m3-switch">                           
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label> <span class="m3-bold">Dark Mode</span> <br>
+
+                        <label class="m3-switch">
+                            <input type="checkbox" id="TestSwitch">
+                            <span class="slider"></span>
+                        </label>
+
+                        <button class="m3-border m3-silver m3-hover-border-skyblue"
+                        onclick="document.getElementById('TestSwitch').checked = true;">Check</button>
+
+                        <button class="m3-border m3-silver m3-hover-border-skyblue"
+                        onclick="document.getElementById('TestSwitch').checked = false;">Uncheck</button>
+                    </article>
+
+<pre class="html-dark m3-text-white" style="margin-top: 0;"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('SwitchExHtml');"></button><code id='SwitchExHtml'>
+&lt;label class="m3-switch"> 
+    &lt;input type="checkbox">
+    &lt;span class="slider">&lt;/span>
+&lt;/label>&lt;span>Some Text&lt;/span>
+
+</code></pre>
+
+                    <article class="m3-container m3-margin-top-3x">
+                        <h5 class="m3-text-center">Further Styling</h5>
+                       
+                        <div class="m3-center">
+                            <p>
+                                A switch works in a similar way as that of a checkbox. 
+                                However, switches use a slider instead of a checkmark. <br>
+                                M3 Colors classes won't have any effect due to the 
+                                <a href="https://developer.mozilla.org/en-US/Web/CSS/Specificity" class="m3-text-blue">selector specificity</a> 
+                                of this component.
+                            </p>
+                        </div>
+
+                        <p><b>Example:</b></p>
+
+                        <style>
+                            .m3-switch input:checked ~ .special-slider { background-color: #921f62;}
+
+                            .m3-switch .dark-slider { background: #666;}
+                            .m3-switch .dark-slider::before { background-color: #84cf47;}
+                            .m3-switch input:checked ~ .dark-slider { background-color: #000;}
+
+                            .m3-switch .random-style { background: #dd973b;}
+                            .m3-switch .random-style::before { background-color: #ffbf0f;}
+                            .m3-switch input:checked ~ .random-style { background-color: #c44c4c;}
+                        </style>
+
+                        <label class="m3-switch">
+                            <input type="checkbox">
+                            <span class="slider special-slider"></span>
+                        </label> <span>Pinky Pink Switch</span> <br>
+
+                        <label class="m3-switch">
+                            <input type="checkbox">
+                            <span class="slider dark-slider"></span>
+                        </label> <span>Dark Side</span> <br>
+
+                        <label class="m3-switch">
+                            <input type="checkbox">
+                            <span class="slider random-style"></span>
+                        </label> <span>Random Style</span>
+
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('SwitchStyling');"></button><code id='SwitchStyling'>
+&lt;label class="m3-switch">
+    &lt;input type="checkbox">
+    &lt;span class="slider random-style">&lt;/span>
+&lt;/label> &lt;span>Random Style&lt;/span>
+
+&lt;style>
+    .m3-switch .random-style { background: #dd973b;}  /* Box background color */
+    .m3-switch .random-style::before { background-color: #ffbf0f;} /* Slider (⚪) color */
+    .m3-switch input:checked ~ .random-style { background-color: #c44c4c;} /* Box background color when checked */
+&lt;/style>
+
+</code></pre>
+                        
+                    </article>
+                </section>
+
+                <article class="m3-right" style="max-width: 700px;"> 
+                    <div class="m3-media items-center m3-small"> 
+                        <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                        <div class="m3-media-content"> 
+                            <b>Reminder:</b> 
+                            The colors used in this documentation are part of M3 Colors. <br>
+                            If you don't require our library, remember to replace each color with your own.
+                        </div> 
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

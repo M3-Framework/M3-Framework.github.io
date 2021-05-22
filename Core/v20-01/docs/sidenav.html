@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sidenav | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 1024px){ #main{margin-left: 0;}}
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a class="m3-text-skyblue">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#PushContent">♦️ Push Content</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Overlay">♦️ Overlay Content</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#IconSidenav">♦️ Icon Sidenav</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index: 2;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-transparent m3-border m3-border-yellow m3-text-bronze">JavaScript Optional</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Sidenav</h4>
+                    <div class="m3-vertical-margin-2x">
+                        <span class="m3-tag m3-small m3-silver">initial width: 300px</span>
+                        <span class="m3-tag m3-small m3-silver">z-index: 4</span>
+                    </div>
+                    <p>
+                        The sidenav displays various forms of information to the right or left side of a page.
+                    </p>
+                    <button class="m3-btn m3-transparent m3-hover-light-gray" onclick="DisplaySidenav('ExSidenav')">
+                        Toggle Example
+                    </button>
+
+                    <div class="m3-sidenav m3-shadow-2 m3-right" id="ExSidenav" style="padding-top:0;">
+                        <article class="m3-card">
+                            <img src="http://placekitten.com/1000/" alt="Test Image" style="height: 200px;">
+                            <section class="m3-card-overlay">
+                                <div class="m3-display-bottom m3-w-100 m3-padding m3-text-white" style="background: linear-gradient(transparent, #000);">
+                                    <h5>John Meow</h5>
+                                    <span>Web Designer</span>
+                                </div>
+                            </section>
+                        </article>
+                        <section class="m3-container m3-padding-2x">
+                            <a class="far fa-envelope"></a>
+                            <a class="far fa-folder m3-horizontal-margin-2x"></a>
+                            <a class="fas fa-cog"></a>
+
+                            <span class="m3-tag m3-small m3-gradient-grape m3-right">Font Awesome Icons</span>
+                        </section>
+                        <a class="m3-option m3-light-gray">Option 1</a>
+                        <a class="m3-option m3-accordion">Accordion</a>
+                        <div class="m3-panel">
+                            <ul class="m3-list">
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                            </ul>
+                        </div>
+                        <a class="m3-option">Option 3</a>
+                    </div>
+                    
+                    
+
+                    <article class="m3-padding m3-vertical-margin-2x m3-grey m3-shadow-2">
+                        <h5>Example:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('SidenavExHtml');"></button><code id='SidenavExHtml'>
+&lt;button class="m3-btn" onclick="DisplaySidenav('ExSidenav')">Toggle Menu&lt;/button>
+
+&lt;div class="m3-sidenav m3-shadow-2 m3-right" id="ExSidenav" style="padding-top:0;">
+    &lt;article class="m3-card">
+        &lt;img src="your_img" alt="Image Description" style="height: 200px;">
+        &lt;section class="m3-card-overlay">
+            &lt;div class="m3-display-bottom m3-w-100 m3-padding m3-text-white" style="background: linear-gradient(transparent, #000);">
+                &lt;h5>John Meow&lt;/h5>
+                &lt;span>Web Designer&lt;/span>
+            &lt;/div>
+        &lt;/section>
+    &lt;/article>
+    &lt;section class="m3-container m3-padding-2x">
+        &lt;a class="far fa-envelope">&lt;/a>
+        &lt;a class="far fa-folder m3-horizontal-margin-2x">&lt;/a>
+        &lt;a class="fas fa-cog">&lt;/a>
+    &lt;/section>
+    &lt;a class="m3-option m3-light-gray">Option 1&lt;/a>
+    &lt;a class="m3-option">Option 2&lt;/a>
+    &lt;a class="m3-option">Option 3&lt;/a>
+&lt;/div>
+
+</code></pre>
+                        <h5>JavaScript:</h5>
+<pre class="m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('SidenavExJS');"></button><code id='SidenavExJS' class="js-dark">
+function DisplaySidenav(id) {
+    let sidenav_id = document.getElementById(id);
+    sidenav_id.classList.toggle("active");
+}
+
+</code></pre>
+                    </article>
+                    
+                    <div class="m3-table-overflow m3-mobile-small">
+                        <table class="m3-table bordered">
+                            <caption class="m3-sr-only">Display And Positioning Classes Available For M3 Sidenavs</caption>
+                            <thead>
+                                <th>Class</th>
+                                <th>Description</th>
+                            </thead>
+                            <tbody>
+                                <tr class="m3-hover-light-gray">
+                                    <td style="white-space: nowrap; overflow: auto;">.m3-sidenav + .m3-right</td>
+                                    <td>Displays the sidenav on the right corner of the page.</td>
+                                </tr>
+                                <tr class="m3-hover-light-gray">
+                                    <td style="white-space: nowrap; overflow: auto;">.m3-sidenav + .display-default</td>
+                                    <td>Displays the sidenav on large screens (Desktop & TV) and hides it on smaller (Tablet & Mobile)</td>
+                                </tr>
+                                <tr class="m3-hover-light-gray">
+                                    <td style="white-space: nowrap; overflow: auto;">.m3-sidenav + .always-display</td>
+                                    <td>Displays the sidenav always, regardless of the screen size.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="m3-padding-2x" id="PushContent">
+                    <h4>
+                        <a href="#PushContent" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Push Content</h4>
+                    
+                    <article class="m3-jumbo m3-border m3-silver" style="overflow-x: hidden; height: 400px;">
+
+                        <div class="m3-sidenav always-display m3-shadow-2 m3-mobile-small" style="position: absolute; width: 25vw; z-index: 3;">
+                            <a class="m3-option m3-light-gray">Option 1</a>
+                            <a class="m3-option">Option 2</a>
+                            <a class="m3-option">Option 3</a>
+                        </div>
+
+
+                        <section class="m3-padding m3-white" style="margin-left: 25vw;">
+                            <h5>Push Content #1</h5>
+                            <p>Content is always pushed to the right.</p>
+                        </section>
+                        
+                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('PushSidenavHtml');"></button><code id='PushSidenavHtml'>
+&lt;aside class="m3-sidenav always-display m3-shadow-2 m3-mobile-small" style="width: 25vw;">
+    &lt;a class="m3-option m3-light-gray">Option 1&lt;/a>
+    &lt;a class="m3-option">Option 2&lt;/a>
+    &lt;a class="m3-option">Option 3&lt;/a>
+&lt;/aside>
+
+
+&lt;main class="m3-padding m3-white" style="margin-left: 25vw;">
+    ...
+&lt;/main>
+
+</code></pre>
+
+                    <article class="m3-container-fw m3-vertical-margin-2x m3-border m3-silver" style="overflow-x: hidden; height: 400px;">
+
+                        <div class="m3-sidenav m3-shadow-2" id="PushExSidenav" style="position: absolute; width: 250px; z-index: 3;">
+                            <a class="m3-option m3-light-gray">Option 1</a>
+                            <a class="m3-option">Option 2</a>
+                            <a class="m3-option">Option 3</a>
+                        </div>
+
+
+                        <section class="m3-padding-3x" id="ExMain" style="transition: margin-left 0.6s;">
+                            <button class="m3-btn no-margin" onclick="ExPushContent('PushExSidenav', 'ExMain');">&equiv;</button>
+
+                            <div class="m3-padding-2x m3-margin-top-2x m3-white">
+                                <h5>Push Content #2</h5>
+                                <p>Content will be pushed to the right whenever the sidenav is active.</p>
+                                <p>(Requires JavaScript)</p>
+                            </div>    
+                        </section>
+                        
+                    </article>
+
+<pre class="html-dark m3-text-white"><span class="m3-margin">HTML</span><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('PushSidenavActiveHtml');"></button><code id='PushSidenavActiveHtml'>
+&lt;aside class="m3-sidenav m3-shadow-2" id="AnyID" style="width: 250px;">
+    &lt;a class="m3-option m3-light-gray">Option 1&lt;/a>
+    &lt;a class="m3-option">Option 2&lt;/a>
+    &lt;a class="m3-option">Option 3&lt;/a>
+&lt;/aside>
+
+
+&lt;main id="main" style="transition: margin-left 0.6s;">
+    &lt;button class="m3-btn" onclick="ExPushContent('AnyID', 'main');">&equiv;&lt;/button>
+    ...
+&lt;/main>
+
+</code></pre>
+
+<pre class="m3-text-white"><span class="m3-margin">JavaScript</span><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('PushSidenavActiveHtml');"></button><code id='PushSidenavActiveHtml' class="js-dark">
+function ExPushContent(id, container) {
+    let sidenav_id = document.getElementById(id);
+    let container_id = document.getElementById(container);
+    
+    sidenav_id.classList.toggle("active");
+    container_id.style.marginLeft = sidenav_id.style.width;
+
+    if(!sidenav_id.classList.contains("active")){
+        container_id.style.marginLeft = 0;
+    }
+}
+
+</code></pre>
+                </section>
+
+                <section class="m3-padding-2x" id="Overlay">
+                    <h4>
+                        <a href="#Overlay" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Overlay Content
+                    </h4>
+
+                    <article class="m3-jumbo m3-border m3-silver" style="overflow-x: hidden; height: 400px;">
+
+                        <div class="m3-sidenav always-display m3-shadow-2 m3-mobile-small" style="position: absolute; width: 25vw; z-index: 3;">
+                            <a class="m3-option m3-light-gray">Option 1</a>
+                            <a class="m3-option">Option 2</a>
+                            <a class="m3-option">Option 3</a>
+                        </div>
+
+
+                        <section class="m3-padding m3-white m3-text-center">
+                            <h5>Overlay Content #1</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto id, culpa illum harum necessitatibus, deserunt excepturi adipisci quae accusamus, libero impedit autem iste quas cupiditate debitis accusantium neque rerum facere?</p>
+                        </section>
+                        
+                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('OverlaySidenavHtml');"></button><code id='OverlaySidenavHtml'>
+&lt;aside class="m3-sidenav always-display m3-shadow-2 m3-mobile-small" style="width: 25vw;">
+    &lt;a class="m3-option m3-light-gray">Option 1&lt;/a>
+    &lt;a class="m3-option">Option 2&lt;/a>
+    &lt;a class="m3-option">Option 3&lt;/a>
+&lt;/aside>
+
+
+&lt;main class="m3-padding m3-white">
+    ...
+&lt;/main>
+
+</code></pre>
+
+                    <article class="m3-container-fw m3-vertical-margin-2x m3-border m3-silver" style="overflow-x: hidden; height: 400px;">
+
+                        <div class="m3-sidenav m3-shadow-2" id="OverlayExSidenav" style="position: absolute; width: 100%; z-index: 3;">
+                            <button class="m3-close m3-text-red" onclick="ExPushContent('OverlayExSidenav', 'NoMain');">Close</button>
+                            
+                            <a class="m3-option m3-light-gray">Option 1</a>
+                            <a class="m3-option">Option 2</a>
+                            <a class="m3-option">Option 3</a>
+                        </div>
+
+
+                        <section class="m3-padding-3x" style="transition: margin-left 0.6s;">
+                            <button class="m3-btn no-margin" onclick="ExPushContent('OverlayExSidenav', 'NoMain');">&equiv;</button>
+
+                            <div class="m3-padding-2x m3-margin-top-2x m3-white">
+                                <h5>Overlay Content #2 - Full Width</h5>
+                                <p>When activated, the sidenav will occupy the full screen.</p>
+                                <p>(Requires JavaScript)</p>
+                            </div>    
+                        </section>
+                        
+                    </article>
+
+<pre class="html-dark m3-text-white"><span class="m3-margin">HTML</span><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('OverlayFWSidenavHtml');"></button><code id='OverlayFWSidenavHtml'>
+&lt;aside class="m3-sidenav" id="AnyID" style="width: 100%;">
+    &lt;button class="m3-close m3-text-red" onclick="OverlayContent('AnyID');">Close&lt;/button>
+
+    &lt;a class="m3-option m3-light-gray">Option 1&lt;/a>
+    &lt;a class="m3-option">Option 2&lt;/a>
+    &lt;a class="m3-option">Option 3&lt;/a>
+&lt;/aside>
+
+
+&lt;main id="main" style="transition: margin-left 0.6s;">
+    &lt;button class="m3-btn" onclick="OverlayContent('AnyID');">&equiv;&lt;/button>
+    ...
+&lt;/main>
+
+</code></pre>
+
+<pre class="m3-text-white"><span class="m3-margin">JavaScript</span><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('OverlayFWSidenavJS');"></button><code id='OverlayFWSidenavJS' class="js-dark">
+function OverlayContent(id) {
+    let sidenav_id = document.getElementById(id);
+    sidenav_id.classList.toggle("active");
+}
+
+</code></pre>
+                    
+                </section>
+
+                <section class="m3-padding-2x" id="IconSidenav">
+                    <h4>
+                        <a href="#IconSidenav" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Icon Sidenav
+                    </h4>
+
+                    <article class="m3-container-fw m3-vertical-margin-2x m3-border m3-silver" style="overflow-x: hidden; height: 400px;">
+
+                        <div class="m3-sidenav m3-shadow-2 m3-right always-display m3-huge" id="OverlayExSidenav" style="position: absolute; width: 70px; z-index: 3;">
+                            <div class="m3-text-center">
+                                <a class="m3-option">🗺️</a>
+                                <a class="m3-option">🖨️</a>
+                                <a class="m3-option">📷</a>
+                                <a class="m3-option">📜</a>
+                            </div>
+                        </div>
+                        
+                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('PushSidenavActiveHtml');"></button><code id='PushSidenavActiveHtml'>
+&lt;aside class="m3-sidenav always-display m3-huge" style="width: 70px;">
+    &lt;div class="m3-text-center">
+        &lt;a class="m3-option">🗺️&lt;/a>
+        &lt;a class="m3-option">🖨️&lt;/a>
+        &lt;a class="m3-option">📷&lt;/a>
+        &lt;a class="m3-option">📜&lt;/a>
+    &lt;/div>
+&lt;/aside>
+
+</code></pre>
+                </section>
+
+                <article class="m3-right" style="max-width: 800px;"> 
+                    <div class="m3-media items-center m3-small"> 
+                        <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                        <div class="m3-media-content">
+                            <b>Reminder:</b> 
+                            The colors used in this documentation are part of M3 Colors. <br>
+                            If you don't require our library, remember to replace each color with your own.
+                        </div> 
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        /* Used in the documentation #PushContent */
+        function ExPushContent(id, container) {
+            let sidenav_id = document.getElementById(id);
+            let container_id = document.getElementById(container);
+            
+            sidenav_id.classList.toggle("active");
+            container_id.style.marginLeft = sidenav_id.style.width;
+
+            if(!sidenav_id.classList.contains("active")){
+                container_id.style.marginLeft = 0;
+            }
+        }
+    </script>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

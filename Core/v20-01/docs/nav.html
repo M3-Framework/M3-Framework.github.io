@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Navigation | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a class="m3-text-skyblue">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Nav">♦️ Nav</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Toolbar">♦️ Toolbar</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-skyblue">Pure CSS</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Navigation</h4>
+                    <div class="m3-vertical-margin-2x">
+                        <span class="m3-tag m3-small m3-silver">z-index: 3</span>
+                    </div>
+                    <p>
+                        A navigation bar is a section of a graphical user interface intended to aid visitors in accessing information.
+                    </p>
+
+                    <div class="m3-nav m3-silver">
+                        <input type="checkbox" id="NavToggle">
+                        <label for="NavToggle" class="m3-nav-toggle m3-huge">&equiv;</label>
+
+                        <header class="m3-nav-brand">
+                            <div class="m3-row no-gutters">
+                                <div class="m3-item align-middle">
+                                    <h4>😀 HAPPY BRAND</h4>
+                                </div>
+
+                                <div class="m3-item m3-text-right m3-mobile-small">
+                                    <button class="m3-btn m3-purple">Sign In</button>
+                                    <button class="m3-btn m3-grey">Log In</button>
+                                </div>
+                            </div>
+                        </header>
+                        
+                        <section class="m3-nav-section m3-light-gray">
+                            <a class="m3-bar-left m3-border-skyblue m3-text-skyblue">You're Here</a>
+                            <label class="m3-dropdown hoverable">
+                                <a class="dropdown-trigger">Dropdown</a>
+                                <input type="checkbox" class="m3-toggle">
+        
+                                <ul class="m3-dropdown-content">
+                                    <a class="m3-hover-silver">One action</a>
+                                    <a class="m3-hover-silver">Another action</a>
+                                    <a class="m3-hover-silver">Something here</a>
+                                    <hr>
+                                    <a class="m3-hover-silver m3-text-skyblue">External Link 1</a>
+                                    <a class="m3-hover-silver m3-text-skyblue">External Link 2</a>
+                                </ul>
+                            
+                            </label>
+                            <a class="m3-hover-silver">Link 1</a>
+                            <a class="m3-hover-silver">Link 2</a>
+                            <a class="m3-hover-silver">Link 3</a>
+                            <a class="m3-hover-silver">Link 4</a>
+                        </section>
+                        
+                    </div>
+
+                    <article class="m3-padding m3-grey m3-margin-top-2x">
+                        <h5 class="m3-margin">Example:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NavExHtml');"></button><code id='NavExHtml'>
+&lt;nav class="m3-nav m3-silver">
+    &lt;input type="checkbox" id="NavToggle">
+    &lt;label for="NavToggle" class="m3-nav-toggle m3-huge">&amp;equiv;&lt;/label>
+
+    &lt;header class="m3-nav-brand">
+        &lt;div class="m3-row no-gutters">
+            &lt;div class="m3-item align-middle">
+                &lt;h4>😀 HAPPY BRAND&lt;/h4>
+            &lt;/div>
+
+            &lt;div class="m3-item m3-text-right m3-mobile-small">
+                &lt;button class="m3-btn m3-purple">Sign In&lt;/button>
+                &lt;button class="m3-btn m3-grey">Log In&lt;/button>
+            &lt;/div>
+        &lt;/div>
+    &lt;/header>
+    
+    &lt;section class="m3-nav-section m3-light-gray">
+        &lt;a class="m3-bar-left m3-border-skyblue m3-text-skyblue">You're Here&lt;/a>
+        &lt;label class="m3-dropdown hoverable">
+            &lt;a class="dropdown-trigger">Dropdown&lt;/a>
+            &lt;input type="checkbox" class="m3-toggle">
+
+            &lt;ul class="m3-dropdown-content">
+                &lt;a class="m3-hover-silver">One action&lt;/a>
+                &lt;a class="m3-hover-silver">Another action&lt;/a>
+                &lt;a class="m3-hover-silver">Something here&lt;/a>
+                &lt;hr>
+                &lt;a class="m3-hover-silver m3-text-skyblue">External Link 1&lt;/a>
+                &lt;a class="m3-hover-silver m3-text-skyblue">External Link 2&lt;/a>
+            &lt;/ul>
+        
+        &lt;/label>
+        &lt;a class="m3-hover-silver">Link 1&lt;/a>
+        &lt;a class="m3-hover-silver">Link 2&lt;/a>
+        &lt;a class="m3-hover-silver">Link 3&lt;/a>
+        &lt;a class="m3-hover-silver">Link 4&lt;/a>
+    &lt;/section>
+    
+&lt;/nav>
+
+</code></pre>
+
+                    </article>
+
+                </section>
+
+                <section class="m3-padding-2x" id="Nav">
+                    <h4>
+                        <a href="#Nav" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Nav</h4>
+                    <p>Responsive navigation system designed for displaying several links. <br> On small screens, it uses a checkbox to toggle the content.</p>
+
+                    <div class="m3-nav m3-black">
+                        <input type="checkbox" id="NavToggle2">
+                        <label for="NavToggle2" class="m3-nav-toggle m3-huge">&equiv;</label>
+
+                        <header class="m3-nav-brand">
+                            <div class="m3-row no-gutters">
+                                <div class="m3-item align-middle">
+                                    <h4>😀 HAPPY BRAND</h4>
+                                </div>
+
+                                <div class="m3-item m3-mobile-small">
+                                    <div class="m3-input" style="margin-bottom:0;">
+                                        <input class="m3-input-field m3-white" type="text" placeholder="Search">
+                                        <button class="m3-input-item m3-gray">
+                                            🔍
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        
+                        <section class="m3-nav-section m3-space-gray">
+                            <a class="m3-hover-dark-gray">About</a>
+                            <a class="m3-hover-dark-gray">Support</a>
+                            <a class="m3-hover-dark-gray">Our Great Team</a>
+                            <a class="m3-hover-dark-gray">Learn more</a>
+                        </section>
+                        
+                    </div>
+
+                    <button class="m3-accordion">Click me to see the code</button>
+                    <div class="m3-panel">
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NavSearchBarCode');"></button><code id='NavSearchBarCode'>
+&lt;nav class="m3-nav m3-black">
+    &lt;input type="checkbox" id="NavToggle">
+    &lt;label for="NavToggle" class="m3-nav-toggle m3-huge">&amp;equiv;&lt;/label>
+
+    &lt;header class="m3-nav-brand">
+        &lt;div class="m3-row no-gutters">
+            &lt;div class="m3-item align-middle">
+                &lt;h4>😀 HAPPY BRAND&lt;/h4>
+            &lt;/div>
+
+            &lt;div class="m3-item m3-mobile-small">
+                &lt;div class="m3-input" style="margin-bottom:0;">
+                    &lt;input class="m3-input-field m3-white" type="text" placeholder="Search">
+                    &lt;button class="m3-input-item m3-gray">
+                        🔍
+                    &lt;/button>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/header>
+    
+    &lt;section class="m3-nav-section m3-space-gray">
+        &lt;a class="m3-hover-dark-gray">About&lt;/a>
+        &lt;a class="m3-hover-dark-gray">Support&lt;/a>
+        &lt;a class="m3-hover-dark-gray">Our Great Team&lt;/a>
+        &lt;a class="m3-hover-dark-gray">Learn more&lt;/a>
+    &lt;/section>
+    
+&lt;/nav>
+
+</code></pre>
+                    </div>
+
+
+                    <div class="m3-nav m3-black m3-margin-top-2x">
+                        <input type="checkbox" id="NavToggle3">
+                        <label for="NavToggle3" class="m3-nav-toggle m3-huge">&equiv;</label>
+
+                        <header class="m3-nav-brand">
+                            <div class="m3-row no-gutters space-between">
+                                <div class="m3-item l4 m5 s12 m3-text-center">
+                                    <h4>😀 BRAND</h4>
+                                </div>
+                                <div class="m3-item l3 m4 s12 m3-margin-top-2x m3-text-center">
+                                    <a class="m3-padding m3-border-bottom"><i class="far fa-list-alt"></i></a>
+                                    <a class="m3-padding m3-horizontal-margin m3-border-bottom"><i class="fas fa-user"></i></a>
+                                    <a class="m3-padding m3-border-bottom"><i class="fas fa-cog"></i></a>
+                                </div>
+                            </div>
+                        </header>
+
+                        <section class="m3-nav-section m3-space-gray">
+                            <a class="m3-hover-dark-gray">About</a>
+                            <a class="m3-hover-dark-gray">Support</a>
+                            <a class="m3-hover-dark-gray">Our Great Team</a>
+                            <a class="m3-hover-dark-gray">Learn more</a>
+                        </section>
+                        
+                    </div>
+
+                    <button class="m3-accordion">Click me to see the code</button>
+                    <div class="m3-panel">
+                        <p><span class="m3-tag m3-gradient-grape">Font Awesome used for the icons</span></p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NavIconsCode');"></button><code id='NavIconsCode'>
+&lt;nav class="m3-nav m3-black">
+    &lt;input type="checkbox" id="NavToggle">
+    &lt;label for="NavToggle" class="m3-nav-toggle m3-huge">&amp;equiv;&lt;/label>
+
+    &lt;header class="m3-nav-brand">
+        &lt;div class="m3-row no-gutters space-between">
+            &lt;div class="m3-item l4 m5 s12 m3-text-center">
+                &lt;h4>😀 BRAND&lt;/h4>
+            &lt;/div>
+            &lt;div class="m3-item l3 m4 s12 m3-margin-top-2x m3-text-center">
+                &lt;a class="m3-padding m3-border-bottom">&lt;i class="far fa-list-alt">&lt;/i>&lt;/a>
+                &lt;a class="m3-padding m3-horizontal-margin m3-border-bottom">&lt;i class="fas fa-user">&lt;/i>&lt;/a>
+                &lt;a class="m3-padding m3-border-bottom">&lt;i class="fas fa-cog">&lt;/i>&lt;/a>
+            &lt;/div>
+        &lt;/div>
+    &lt;/header>
+
+    &lt;section class="m3-nav-section m3-space-gray">
+        &lt;a class="m3-hover-dark-gray">About&lt;/a>
+        &lt;a class="m3-hover-dark-gray">Support&lt;/a>
+        &lt;a class="m3-hover-dark-gray">Our Great Team&lt;/a>
+        &lt;a class="m3-hover-dark-gray">Learn more&lt;/a>
+    &lt;/section>
+    
+&lt;/nav>
+
+</code></pre>
+                    </div>
+
+                    <div class="m3-nav m3-black m3-margin-top-2x">
+
+                        <header class="m3-nav-brand m3-mobile-small">
+                            <div class="m3-row no-gutters space-between">
+                                <div class="m3-item size-12 m3-text-center">
+                                    <h4>😀 BRAND</h4>
+                                </div>
+                                <div class="m3-item size-12">
+                                    <span class="m3-center">
+                                        <a class="m3-padding "><i class="far fa-list-alt"></i> Tasks</a>
+                                        <a class="m3-padding m3-horizontal-margin"><i class="fas fa-user"></i> Account</a>
+                                        <a class="m3-padding"><i class="fas fa-cog"></i> Settings</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </header>
+                        
+                    </div>
+
+                    <button class="m3-accordion">Click me to see the code</button>
+                    <div class="m3-panel">
+                        <p><span class="m3-tag m3-gradient-grape">Font Awesome used for the icons</span></p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NavNoSectionCode');"></button><code id='NavNoSectionCode'>
+&lt;nav class="m3-nav m3-black">
+    &lt;header class="m3-nav-brand m3-mobile-small">
+        &lt;div class="m3-row no-gutters space-between">
+            &lt;div class="m3-item size-12 m3-text-center">
+                &lt;h4>😀 BRAND&lt;/h4>
+            &lt;/div>
+            &lt;div class="m3-item size-12">
+                &lt;span class="m3-center">
+                    &lt;a class="m3-padding ">&lt;i class="far fa-list-alt">&lt;/i> Tasks&lt;/a>
+                    &lt;a class="m3-padding m3-horizontal-margin">&lt;i class="fas fa-user">&lt;/i> Account&lt;/a>
+                    &lt;a class="m3-padding">&lt;i class="fas fa-cog">&lt;/i> Settings&lt;/a>
+                &lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/header>
+&lt;/nav>
+
+</code></pre>
+                    </div>
+
+                    <article class="m3-margin-top-4x">
+                        <h5>Alternative - Flex Grid System</h5>
+                        <p>You can recreate the appearence of a nav using the grid system</p>
+
+                        <div class="m3-row m3-black m3-margin-top-2x">
+                            <div class="m3-item">
+                                <h4>😀 HAPPY BRAND</h4>
+                            </div>
+                            <div class="m3-item align-middle m3-text-center m3-mobile-small">
+                                <a class="m3-padding">About</a>
+                                <a class="m3-padding">Support</a>
+                                <a class="m3-padding">Team</a>
+                                <a class="m3-padding">Learn More</a>
+                            </div>
+                        </div>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('NavFlexGridHtml');"></button><code id='NavFlexGridHtml'>
+&lt;nav class="m3-row m3-black">
+    &lt;header class="m3-item">
+        &lt;h4>😀 HAPPY BRAND&lt;/h4>
+    &lt;/header>
+    &lt;section class="m3-item align-middle m3-text-center m3-mobile-small">
+        &lt;a class="m3-padding">About&lt;/a>
+        &lt;a class="m3-padding">Support&lt;/a>
+        &lt;a class="m3-padding">Team&lt;/a>
+        &lt;a class="m3-padding">Learn More&lt;/a>
+    &lt;/section>
+&lt;/nav>
+
+</code></pre>
+                    </article>
+                </section>
+
+                <section class="m3-padding-2x" id="Toolbar">
+                    <h4>
+                        <a href="#Toolbar" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Toolbar
+                    </h4>
+                    <div class="m3-vertical-margin-2x">
+                        <span class="m3-tag m3-small m3-silver">z-index: 2</span>
+                    </div>
+                    <p>Provides an easy access to quick-actions or tools for your site.</p>
+
+                    <div class="m3-toolbar">
+                        <input type="checkbox" id="ToolToggle"/>
+                        <label for="ToolToggle" class="m3-toggle"></label>
+                        <ul class="m3-tools">
+                            <li class="m3-option m3-light-gray m3-circle"><a class="fas fa-mug-hot"></a></li>
+                            <li class="m3-option m3-light-gray m3-circle"><a class="fas fa-cog"></a></li>
+                            <li class="m3-option m3-light-gray m3-circle"><a class="far fa-thumbs-up"></a></li>
+                            <li class="m3-option m3-light-gray m3-circle"><a class="far fa-trash-alt"></a></li>
+                        </ul>
+                    </div>
+                    <div class="m3-toolbar reverse">
+                        <input type="checkbox" id="ToolToggle2"/>
+                        <label for="ToolToggle2" class="m3-toggle"></label>
+                        <ul class="m3-tools">
+                            <li class="m3-option m3-light-gray m3-circle"><a class="fas fa-mug-hot"></a></li>
+                            <li class="m3-option m3-light-gray m3-circle"><a class="fas fa-cog"></a></li>
+                            <li class="m3-option m3-light-gray m3-circle"><a class="far fa-thumbs-up"></a></li>
+                            <li class="m3-option m3-light-gray m3-circle"><a class="far fa-trash-alt"></a></li>
+                        </ul>
+                    </div>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ToolbarExHtml');"></button><code id='ToolbarExHtml'>
+&lt;div class="m3-toolbar">
+    &lt;input type="checkbox" id="AnyID"/>
+    &lt;label for="AnyID" class="m3-toggle">&lt;/label>
+    &lt;ul class="m3-tools">
+        &lt;li class="m3-option m3-light-gray m3-circle">&lt;a class="fas fa-mug-hot">&lt;/a>&lt;/li>
+        &lt;li class="m3-option m3-light-gray m3-circle">&lt;a class="fas fa-cog">&lt;/a>&lt;/li>
+        &lt;li class="m3-option m3-light-gray m3-circle">&lt;a class="far fa-thumbs-up">&lt;/a>&lt;/li>
+        &lt;li class="m3-option m3-light-gray m3-circle">&lt;a class="far fa-trash-alt">&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+
+</code></pre>
+
+<p>You may add the class <code class="m3-dark">.reverse</code> to the <b>.m3-toolbar</b> to place it on the right corner:</p>
+
+<code class="m3-dark" style="font-size: 100%;">&lt;div class="m3-toolbar reverse">...&lt;/div></code>
+                </section>
+
+                <article class="m3-right" style="max-width: 700px;"> 
+                    <div class="m3-media items-center m3-small"> 
+                        <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                        <div class="m3-media-content"> 
+                            <b>Reminder:</b> 
+                            The colors used in this documentation are part of M3 Colors. <br>
+                            If you don't require our library, remember to replace each color with your own.
+                        </div> 
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

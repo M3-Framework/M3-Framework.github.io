@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Progress Bar | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+
+        .m3-progress:hover .m3-progress-bar{width: 100%;}
+        .m3-progress.vertical:hover .m3-progress-bar{height: 100%;}
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a class="m3-text-skyblue">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#VariableHeight">♦️ Variable Height</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#VerticalProgress">♦️ Vertical Progress Bar</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Coloring">♦️ Coloring</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-skyblue">Pure CSS</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Progress Bars</h4>
+                    <p>
+                        A progress bar is a graphical control element used to visualize the progression of an extended computer operation, 
+                        such as a download, file transfer, or installation.
+                    </p>
+
+                    <div class="m3-progress" style="height: 2rem;">
+                        <div class="m3-progress-bar m3-w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
+                    <div class="m3-progress" style="height: 2rem;">
+                        <div class="m3-progress-bar m3-w-50 m3-gold" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            <span class="m3-display-right m3-padding m3-large crystal-3">SKILL ⚡</span>
+                        </div>
+                    </div>
+
+                    <div class="m3-progress" style="height: 2rem;">
+                        <div class="m3-progress-bar m3-w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <span class="m3-display-left m3-padding m3-large">SEXINESS 😏</span>
+                            <span class="m3-display-right m3-padding m3-large">100%</span>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <article class="m3-padding m3-vertical-margin-2x m3-grey m3-shadow-2">
+                        <h5>Example:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ProgressExHtml');"></button><code id='ProgressExHtml'>
+&lt;div class="m3-progress" style="height: 2rem;">
+    &lt;div class="m3-progress-bar m3-w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+        &lt;span class="m3-display-left m3-padding m3-large">SEXINESS 😏&lt;/span>
+    &lt;/div>
+&lt;/div>
+
+</code></pre>
+                    </article>
+
+                    <article class="m3-margin-top-3x">
+                        <h5>
+                            <b>Accessibility</b>
+                        </h5>
+                        <p>
+                            The <code>role</code> and <code>aria-</code> attributes help clarify the status of the bar:
+                        </p>
+    
+                        <ul>
+                            <li><code>aria-valuemin</code>: Minimum value.</li>
+                            <li><code>aria-valuemax</code>: Maximum value.</li>
+                            <li><code>aria-valuenow</code>: Current value.</li>
+                        </ul>
+    
+                    </article>
+
+                    <article class="m3-margin-top-3x" id="VariableHeight">
+                        <h5>
+                            <a href="#VariableHeight" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                            Variable Height
+                        </h5>
+                        <div class="m3-media items-center"> 
+                            <i class="fas fa-info-circle fa-2x m3-text-yellow m3-media-figure"></i> 
+                            <div class="m3-media-content"> 
+                                <b>Important:</b> <br>
+                                Progress bars will <b>not</b> be displayed if there is no text inside the progress bar and/or the height is not specified.
+                            </div> 
+                        </div>
+
+                        <section class="m3-vertical-margin-2x">
+                            <p>Height: 1rem</p>
+                            <div class="m3-progress" style="height: 1rem;">
+                                <div class="m3-progress-bar m3-w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="m3-margin-top-2x">Height: 3px</p>
+                            <div class="m3-progress" style="height: 3px;">
+                                <div class="m3-progress-bar m3-w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </section>
+
+                        <p>
+                            Change the height directly on the <b>.m3-progress</b> and the <b>.m3-progress-bar</b>
+                            will automatically resize.
+                        </p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ProgressHeightHtml');"></button><code id='ProgressHeightHtml'>
+&lt;div class="m3-progress" style="height: 1rem;">
+    &lt;div class="m3-progress-bar m3-w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">&lt;/div>
+&lt;/div>
+
+</code></pre>
+                    </article>
+                </section>
+
+                <section class="m3-padding-2x" id="VerticalProgress">
+                    <h4>
+                        <a href="#VerticalProgress" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Vertical Progress Bar</h4>
+
+                    <p>
+                        Add the class <b>.vertical</b> to an <b>.m3-progress</b> to change its behaviour. <br>
+                        Now instead of modifying the width you will be modifying the height.
+                    </p>
+
+                    <code class="m3-dark" style="font-size: 100%;">.m3-progress vertical</code>
+
+                    <article class="m3-row space-around m3-silver m3-margin-top-3x">
+                        <section class="m3-item l2 m3 s4">
+                            <article class="m3-progress vertical m3-round-4x" style="height: 33vh;">
+                                <div class="m3-progress-bar m3-h-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-volume-up fa-2x m3-padding-2x m3-display-bottom"></i>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-item l2 m3 s4">
+                            <article class="m3-progress vertical m3-round-4x" style="height: 33vh;">
+                                <div class="m3-progress-bar m3-h-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-bell fa-2x m3-padding-2x m3-display-bottom"></i>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-item l2 m3 s4">
+                            <article class="m3-progress vertical m3-round-4x" style="height: 33vh;">
+                                <div class="m3-progress-bar m3-h-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-clock fa-2x m3-padding-2x m3-display-bottom"></i>
+                                </div>
+                            </article>
+                        </section>
+                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('VerticalProgressHtml');"></button><code id='VerticalProgressHtml'>
+&lt;div class="m3-progress vertical m3-round-4x" style="height: 33vh;">
+    &lt;div class="m3-progress-bar m3-h-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+        &lt;i class="fas fa-clock fa-2x m3-padding-2x m3-display-bottom">&lt;/i>
+    &lt;/div>
+&lt;/div>
+
+</code></pre>
+
+                </section>
+
+                <section class="m3-padding-2x" id="Coloring">
+                    <h4>
+                        <a href="#Coloring" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Coloring</h4>
+
+                    <p>
+                        Customize an .m3-progress using M3 Colors or by manually setting the background and color. <br>
+                        This component is divided in two sections:
+                        <ul>
+                            <li><b>.m3-progress</b>: represents the available space for the progress bar to grow in.</li>
+                            <li><b>.m3-progress-bar</b>: represents the actual filled amount of the progress component.</li>
+                        </ul>
+                        And therefore, you can modify these sections individually and create your own style.
+                    </p>
+
+                    <article class="m3-row">
+                        <section class="m3-item l2 m3 s4">
+                            <article class="m3-progress vertical m3-dark-gray m3-round-4x" style="height: 33vh;">
+                                <div class="m3-progress-bar m3-blue-gray m3-h-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-volume-up fa-2x m3-padding-2x m3-display-bottom"></i>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-item l2 m3 s4">
+                            <article class="m3-progress vertical m3-light-gray m3-round-4x" style="height: 33vh;">
+                                <div class="m3-progress-bar m3-skyblue m3-h-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-bell fa-2x m3-padding-2x m3-display-bottom"></i>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-item l2 m3 s4">
+                            <article class="m3-progress vertical m3-round-4x" style="height: 33vh;">
+                                <div class="m3-progress-bar m3-red m3-h-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-clock fa-2x m3-padding-2x m3-display-bottom"></i>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="m3-item size-12">
+                            <div class="m3-progress m3-white m3-border" style="height: 2rem;">
+                                <div class="m3-progress-bar m3-purple m3-w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="m3-display-left m3-padding m3-large">TEXT</span>
+                                </div>
+                            </div>
+                            <div class="m3-progress m3-dark-gray m3-border" style="height: 2rem;">
+                                <div class="m3-progress-bar m3-white m3-w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="m3-display-left m3-padding m3-large">🐼</span>
+                                </div>
+                            </div>
+                            <div class="m3-progress m3-silver" style="height: 5px;">
+                                <div class="m3-progress-bar m3-red m3-w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </section>
+                    </article>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ColoringProgressHtml');"></button><code id='ColoringProgressHtml'>
+&lt;div class="m3-progress m3-black" style="height: 1rem;">
+    &lt;div class="m3-progress-bar m3-red m3-w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">&lt;/div>
+&lt;/div>
+
+</code></pre>
+                </section>
+
+                <article class="m3-right" style="max-width: 800px;"> 
+                    <div class="m3-media items-center m3-small"> 
+                        <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                        <div class="m3-media-content">
+                            <b>Reminder:</b> 
+                            The colors used in this documentation are part of M3 Colors. <br>
+                            If you don't require our library, remember to replace each color with your own.
+                        </div> 
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

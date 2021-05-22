@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>M3 Colors | Delight in Magnificence</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/RIKijzJ.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+    <style>
+        html{scroll-behavior: smooth;}
+
+        .main-nav-fix{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: auto;
+        }
+
+        .video-container{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -100;
+        }
+
+        #HeaderVideo {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            background:#232a34;
+        }
+
+        .balloon-bg{
+            background-image: url('https://i.imgur.com/TXusFEO.jpg?2');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        #Gradients .m3-row .m3-item .m3-card{width: 150px;}
+        #Gradients .m3-row .m3-item .m3-card-content{
+            border-radius: 0 0 10px 10px;
+        }
+
+
+        @media (max-width: 640px) {
+            #Gradients .m3-row .m3-item .m3-card,
+            #Gradients .m3-row .m3-item .m3-card .square{
+                width: 100%;
+            }
+        }
+        
+        
+        /* SHAPES */
+
+        #infinity {
+            position: relative;
+            width: 212px;
+            height: 100px;
+            box-sizing: content-box;
+        }
+
+        #infinity:before, #infinity:after {
+            content: "";
+            box-sizing: content-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border: 20px solid rgb(60, 159, 189);
+            border-radius: 50px 50px 0 50px;
+            transform: rotate(-45deg);
+        }
+
+        #infinity:after {
+            left: auto;
+            right: 0;
+            border-radius: 50px 50px 50px 0;
+            transform: rotate(45deg);
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .circle-small{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .square{
+            width: 150px;
+            height: 100px;
+            border-radius: 10px 10px 0 0;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header class="m3-full-screen m3-container-fw m3-text-white m3-vertical-center">
+        <div class="m3-margin m3-display-top-left">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/hqF0fTR.png" width="230"></a>
+        </div>
+
+        <div class="video-container">
+            <video autoplay muted loop id="HeaderVideo">
+                <source src="header-videos.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+        <div class="m3-center-block m3-text-center">
+            <img src="https://i.imgur.com/RIKijzJ.png" width="180" style="z-index: 10;">
+            <h1 class="m3-vertical-margin-2x m3-display-2x m3-text-shadow">M3 Colors</h1>
+            <p class="h4 m3-text-shadow">Give Life to your Projects</p>
+
+            <a href="#" class="m3-btn m3-skyblue crystal m3-hover-skyblue m3-round-2x">Get Started</a>
+            <a href="#" class="m3-btn m3-transparent m3-hover-text-silver">Explore</a>
+
+            <p class="m3-display-bottom-right m3-black crystal-5 m3-padding m3-text-right"
+            style="font-size: 0.8em;">
+                <span class="m3-small ">Footage by 
+                    <a href="https://www.pexels.com/@taryn-elliott-1522664?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels"
+                    class="m3-hover-text-skyblue">Taryn Elliott</a> 
+                    from Pexels
+                </span>
+            </p>
+        </div>
+        
+    </header>
+
+    <div class="m3-toolbar m3-margin main-nav-fix">
+        <input type="checkbox" id="ToolToggle"/>
+        <label for="ToolToggle" class="m3-toggle m3-skyblue"></label>
+        <ul class="m3-tools">
+            <li class="m3-option m3-round m3-green"><a class="fas fa-download" title="Download"></a></li>
+            <li class="m3-option m3-round m3-skyblue"><a class="fas fa-book" title="Guide"></a></li>
+            <li class="m3-option m3-round m3-brown"><a class="fas fa-palette" title="Palettes and Shades"></a></li>
+        </ul>
+    </div>
+
+    <section class="m3-jumbo m3-text-center">
+        <p id="infinity" class="m3-center-block m3-margin-bottom-4x"></p><br>
+        <span class="h3 m3-mobile-small">“The soul becomes dyed with the colour of its thoughts.” ― Marcus Aurelius</span>
+    </section>
+
+    <section class="m3-jumbo m3-light-gray">
+        <article class="m3-text-center m3-adaptive-text">
+            <h3 class="m3-mobile-large">What's Included in M3 Colors?</h3>
+            <p>... Well, take a look 😏 ...</p>
+        </article>
+        <div class="m3-row no-gutters">
+            <div class="m3-item">
+                <section class="m3-white m3-shadow-2 m3-padding-2x">
+                    <div class="m3-tabs">
+                        <button class="m3-tab active" onclick="OpenTabContent(event, 'Background');">Background</button>
+                        <button class="m3-tab" onclick="OpenTabContent(event, 'Borders');">Borders</button>
+                        <button class="m3-tab" onclick="OpenTabContent(event, 'Text');">Text</button>
+                    </div>
+
+                    <article class="m3-tab-content m3-padding-top-4x active" id="Background">
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-red"></div>
+                                <p class="m3-margin-top">
+                                    <span>#AF0716</span> <br>
+                                    <span class="m3-text-red">.m3-red</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-wine"></div>
+                                <p class="m3-margin-top">
+                                    <span>#650E15</span> <br>
+                                    <span class="m3-text-wine">.m3-wine</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-pink"></div>
+                                <p class="m3-margin-top">
+                                    <span>#B86B77</span> <br>
+                                    <span class="m3-text-pink">.m3-pink</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-fuchsia"></div>
+                                <p class="m3-margin-top">
+                                    <span>#971F6D</span> <br>
+                                    <span class="m3-text-fuchsia">.m3-fuchsia</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-purple"></div>
+                                <p class="m3-margin-top">
+                                    <span>#5D3256</span> <br>
+                                    <span class="m3-text-purple">.m3-purple</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-blue"></div>
+                                <p class="m3-margin-top">
+                                    <span>#021661</span> <br>
+                                    <span class="m3-text-blue">.m3-blue</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-blue-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#3E4075</span> <br>
+                                    <span class="m3-text-blue-gray">.m3-blue-gray</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-skyblue"></div>
+                                <p class="m3-margin-top">
+                                    <span>#4997D0</span> <br>
+                                    <span class="m3-text-green">.m3-skyblue</span>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-teal"></div>
+                                <p class="m3-margin-top">
+                                    <span>#006C70</span> <br>
+                                    <span class="m3-text-teal">.m3-teal</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-green"></div>
+                                <p class="m3-margin-top">
+                                    <span>#688274</span> <br>
+                                    <span class="m3-text-green">.m3-green</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-emerald"></div>
+                                <p class="m3-margin-top">
+                                    <span>#008163</span> <br>
+                                    <span class="m3-text-emerald">.m3-emerald</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-light-green"></div>
+                                <p class="m3-margin-top">
+                                    <span>#A1B984</span> <br>
+                                    <span class="m3-text-light-green m3-space-gray">.m3-light-green</span>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-yellow"></div>
+                                <p class="m3-margin-top">
+                                    <span>#E4C434</span> <br>
+                                    <span class="m3-text-yellow m3-space-gray">.m3-yellow</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-gold"></div>
+                                <p class="m3-margin-top">
+                                    <span>#DB9200</span> <br>
+                                    <span class="m3-text-gold">.m3-gold</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-beige"></div>
+                                <p class="m3-margin-top">
+                                    <span>#C7AD7F</span> <br>
+                                    <span class="m3-text-beige m3-space-gray">.m3-beige</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-orange"></div>
+                                <p class="m3-margin-top">
+                                    <span>#EA7401</span> <br>
+                                    <span class="m3-text-orange">.m3-orange</span>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bronze"></div>
+                                <p class="m3-margin-top">
+                                    <span>#836600</span> <br>
+                                    <span class="m3-text-bronze">.m3-bronze</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-brown"></div>
+                                <p class="m3-margin-top">
+                                    <span>#715D4C</span> <br>
+                                    <span class="m3-text-brown">.m3-brown</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-light-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#E6E5E5</span> <br>
+                                    <span class="m3-text-light-grey m3-space-gray">.m3-light-grey</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-silver"></div>
+                                <p class="m3-margin-top">
+                                    <span>#D8D8D8</span> <br>
+                                    <span class="m3-text-silver m3-space-gray">.m3-silver</span>
+                                </p>
+                            </div>
+                        </div>
+    
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-grey"></div>
+                                <p class="m3-margin-top">
+                                    <span>#585858</span> <br>
+                                    <span class="m3-text-grey">.m3-grey</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-dark-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#2A2E31</span> <br>
+                                    <span class="m3-text-dark-gray">.m3-dark-grey</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-space-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#131313</span> <br>
+                                    <span class="m3-text-space-gray">.m3-space-gray</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-black"></div>
+                                <p class="m3-margin-top">
+                                    <span>#000</span> <br>
+                                    <span class="m3-text-black">.m3-black</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-bar m3-center-block m3-white"></div>
+                                <p class="m3-margin-top">
+                                    <span>#FFF</span> <br>
+                                    <span class="m3-text-white m3-space-gray">.m3-white</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="m3-tab-content m3-padding-top-4x" id="Borders">
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-red"></div>
+                                <p class="m3-margin-top">
+                                    <span>#AF0716</span> <br>
+                                    <span class="m3-text-red">.m3-border-red</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-wine"></div>
+                                <p class="m3-margin-top">
+                                    <span>#650E15</span> <br>
+                                    <span class="m3-text-wine">.m3-border-wine</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-pink"></div>
+                                <p class="m3-margin-top">
+                                    <span>#B86B77</span> <br>
+                                    <span class="m3-text-pink">.m3-border-pink</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-fuchsia"></div>
+                                <p class="m3-margin-top">
+                                    <span>#971F6D</span> <br>
+                                    <span class="m3-text-fuchsia">.m3-border-fuchsia</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-purple"></div>
+                                <p class="m3-margin-top">
+                                    <span>#5D3256</span> <br>
+                                    <span class="m3-text-purple">.m3-border-purple</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-blue"></div>
+                                <p class="m3-margin-top">
+                                    <span>#021661</span> <br>
+                                    <span class="m3-text-blue">.m3-border-blue</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-blue-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#3E4075</span> <br>
+                                    <span class="m3-text-blue-gray">.m3-border-blue-gray</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-skyblue"></div>
+                                <p class="m3-margin-top">
+                                    <span>#4997D0</span> <br>
+                                    <span class="m3-text-green">.m3-border-skyblue</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-teal"></div>
+                                <p class="m3-margin-top">
+                                    <span>#006C70</span> <br>
+                                    <span class="m3-text-teal">.m3-border-teal</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-green"></div>
+                                <p class="m3-margin-top">
+                                    <span>#688274</span> <br>
+                                    <span class="m3-text-green">.m3-border-green</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-emerald"></div>
+                                <p class="m3-margin-top">
+                                    <span>#008163</span> <br>
+                                    <span class="m3-text-emerald">.m3-border-emerald</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-light-green"></div>
+                                <p class="m3-margin-top">
+                                    <span>#A1B984</span> <br>
+                                    <span class="m3-text-light-green m3-space-gray">.m3-border-light-green</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-yellow"></div>
+                                <p class="m3-margin-top">
+                                    <span>#E4C434</span> <br>
+                                    <span class="m3-text-yellow m3-space-gray">.m3-border-yellow</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-gold"></div>
+                                <p class="m3-margin-top">
+                                    <span>#DB9200</span> <br>
+                                    <span class="m3-text-gold">.m3-border-gold</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-beige"></div>
+                                <p class="m3-margin-top">
+                                    <span>#C7AD7F</span> <br>
+                                    <span class="m3-text-beige m3-space-gray">.m3-border-beige</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-orange"></div>
+                                <p class="m3-margin-top">
+                                    <span>#EA7401</span> <br>
+                                    <span class="m3-text-orange">.m3-border-orange</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-bronze"></div>
+                                <p class="m3-margin-top">
+                                    <span>#836600</span> <br>
+                                    <span class="m3-text-bronze">.m3-border-bronze</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-brown"></div>
+                                <p class="m3-margin-top">
+                                    <span>#715D4C</span> <br>
+                                    <span class="m3-text-brown">.m3-border-brown</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-light-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#E6E5E5</span> <br>
+                                    <span class="m3-text-light-grey m3-space-gray">.m3-border-light-grey</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-silver"></div>
+                                <p class="m3-margin-top">
+                                    <span>#D8D8D8</span> <br>
+                                    <span class="m3-text-silver m3-space-gray">.m3-border-silver</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-grey"></div>
+                                <p class="m3-margin-top">
+                                    <span>#585858</span> <br>
+                                    <span class="m3-text-grey">.m3-border-grey</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-dark-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#2A2E31</span> <br>
+                                    <span class="m3-text-dark-gray">.m3-border-dark-grey</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-space-gray"></div>
+                                <p class="m3-margin-top">
+                                    <span>#131313</span> <br>
+                                    <span class="m3-text-space-gray">.m3-border-space-gray</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center">
+                                <div class="circle m3-center-block m3-bar m3-border-black"></div>
+                                <p class="m3-margin-top">
+                                    <span>#000</span> <br>
+                                    <span class="m3-text-black">.m3-border-black</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-text-center m3-light-gray">
+                                <div class="circle m3-center-block m3-bar m3-border-white"></div>
+                                <p class="m3-margin-top">
+                                    <span>#FFF</span> <br>
+                                    <span class="m3-text-white m3-space-gray">.m3-border-white</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="m3-tab-content m3-padding-top-4x" id="Text">
+                        <div class="m3-row">
+                            <div class="m3-item m3-text-center">
+                                <p class="m3-margin-top">
+                                    <span>#AF0716</span> <br>
+                                    <span class="m3-text-red">.m3-text-red</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#650E15</span> <br>
+                                    <span class="m3-text-wine">.m3-text-wine</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#B86B77</span> <br>
+                                    <span class="m3-text-pink">.m3-text-pink</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#971F6D</span> <br>
+                                    <span class="m3-text-fuchsia">.m3-text-fuchsia</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#5D3256</span> <br>
+                                    <span class="m3-text-purple">.m3-text-purple</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#021661</span> <br>
+                                    <span class="m3-text-blue">.m3-text-blue</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#3E4075</span> <br>
+                                    <span class="m3-text-blue-gray">.m3-text-blue-gray</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#4997D0</span> <br>
+                                    <span class="m3-text-green">.m3-text-skyblue</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#006C70</span> <br>
+                                    <span class="m3-text-teal">.m3-text-teal</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#688274</span> <br>
+                                    <span class="m3-text-green">.m3-text-green</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#008163</span> <br>
+                                    <span class="m3-text-emerald">.m3-text-emerald</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#A1B984</span> <br>
+                                    <span class="m3-text-light-green">.m3-text-light-green</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#E4C434</span> <br>
+                                    <span class="m3-text-yellow">.m3-text-yellow</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#DB9200</span> <br>
+                                    <span class="m3-text-gold">.m3-text-gold</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#C7AD7F</span> <br>
+                                    <span class="m3-text-beige">.m3-text-beige</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#EA7401</span> <br>
+                                    <span class="m3-text-orange">.m3-text-orange</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#836600</span> <br>
+                                    <span class="m3-text-bronze">.m3-text-bronze</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#715D4C</span> <br>
+                                    <span class="m3-text-brown">.m3-text-brown</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#E6E5E5</span> <br>
+                                    <span class="m3-text-light-grey">.m3-text-light-grey</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#D8D8D8</span> <br>
+                                    <span class="m3-text-silvery">.m3-text-silver</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#585858</span> <br>
+                                    <span class="m3-text-grey">.m3-text-grey</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#2A2E31</span> <br>
+                                    <span class="m3-text-dark-gray">.m3-text-dark-grey</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#131313</span> <br>
+                                    <span class="m3-text-space-gray">.m3-text-space-gray</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#000</span> <br>
+                                    <span class="m3-text-black">.m3-text-black</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#FFF</span> <br>
+                                    <span class="m3-text-white">.m3-text-white</span>
+                                </p>
+                            </div>
+                            <div class="m3-item m3-black m3-text-center">
+                                <p class="m3-margin-top">
+                                    <span>#AF0716</span> <br>
+                                    <span class="m3-text-red">.m3-text-red</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#650E15</span> <br>
+                                    <span class="m3-text-wine">.m3-text-wine</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#B86B77</span> <br>
+                                    <span class="m3-text-pink">.m3-text-pink</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#971F6D</span> <br>
+                                    <span class="m3-text-fuchsia">.m3-text-fuchsia</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#5D3256</span> <br>
+                                    <span class="m3-text-purple">.m3-text-purple</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#021661</span> <br>
+                                    <span class="m3-text-blue">.m3-text-blue</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#3E4075</span> <br>
+                                    <span class="m3-text-blue-gray">.m3-text-blue-gray</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#4997D0</span> <br>
+                                    <span class="m3-text-green">.m3-text-skyblue</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#006C70</span> <br>
+                                    <span class="m3-text-teal">.m3-text-teal</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#688274</span> <br>
+                                    <span class="m3-text-green">.m3-text-green</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#008163</span> <br>
+                                    <span class="m3-text-emerald">.m3-text-emerald</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#A1B984</span> <br>
+                                    <span class="m3-text-light-green">.m3-text-light-green</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#E4C434</span> <br>
+                                    <span class="m3-text-yellow">.m3-text-yellow</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#DB9200</span> <br>
+                                    <span class="m3-text-gold">.m3-text-gold</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#C7AD7F</span> <br>
+                                    <span class="m3-text-beige">.m3-text-beige</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#EA7401</span> <br>
+                                    <span class="m3-text-orange">.m3-text-orange</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#836600</span> <br>
+                                    <span class="m3-text-bronze">.m3-text-bronze</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#715D4C</span> <br>
+                                    <span class="m3-text-brown">.m3-text-brown</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#E6E5E5</span> <br>
+                                    <span class="m3-text-light-grey">.m3-text-light-grey</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#D8D8D8</span> <br>
+                                    <span class="m3-text-silvery">.m3-text-silver</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#585858</span> <br>
+                                    <span class="m3-text-grey">.m3-text-grey</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#2A2E31</span> <br>
+                                    <span class="m3-text-dark-gray">.m3-text-dark-grey</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#131313</span> <br>
+                                    <span class="m3-text-space-gray">.m3-text-space-gray</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#000</span> <br>
+                                    <span class="m3-text-black">.m3-text-black</span>
+                                </p>
+                                <p class="m3-margin-top">
+                                    <span>#FFF</span> <br>
+                                    <span class="m3-text-white">.m3-text-white</span>
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="m3-jumbo m3-text-center">
+        <span class="h3 m3-mobile-small">Not enough? <br> Don't worry, it is not over yet.</span>
+    </section>
+
+    <section class="m3-jumbo balloon-bg" style="margin-bottom: 0;">
+
+        <div class="m3-row m3-margin-bottom-4x">
+            <div class="m3-item align-middle">
+                <div class="m3-text-center">
+                    <h2>Crystal Colors</h2>
+                    <code class="m3-transparent m3-large">class='m3-[color] crystal'</code>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-padding m3-round-2x m3-text-center">
+                    <span>Colors with an alpha layer that lets you see through them 👻</span>
+                </div>
+                <div class="m3-row">
+                    <div class="m3-item size-3">
+                        <div class="circle-small m3-center-block m3-white"></div>
+                    </div>
+                    <div class="m3-item size-3">
+                        <div class="circle-small m3-center-block m3-white crystal"></div>
+                    </div>
+                    <div class="m3-item size-3">
+                        <div class="circle-small m3-center-block m3-white crystal-5"></div>
+                    </div>
+                    <div class="m3-item size-3">
+                        <div class="circle-small m3-center-block m3-white crystal-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m3-row m3-margin-bottom-4x m3-text-center">
+            <div class="m3-item">
+                <div class="m3-padding-2x m3-black crystal-3">Beautiful</div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-padding-2x m3-black crystal-3">Modern</div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-padding-2x m3-black crystal-3">Different</div>
+            </div>
+        </div>
+
+        <div class="m3-row">
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-red crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-wine crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-pink crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-fuchsia crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-purple crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-blue crystal"></div>
+            </div>
+        </div>
+
+        <div class="m3-row justify-center">
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-blue-gray crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-skyblue crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-teal crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-green crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-emerald crystal"></div>
+            </div>
+        </div>
+
+        <div class="m3-row">
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-light-green crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-yellow crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-gold crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-beige crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-orange crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-bronze crystal"></div>
+            </div>
+        </div>
+
+        <div class="m3-row m3-margin-bottom-4x">
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-brown crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-light-grey crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-silver crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-grey crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-dark-gray crystal"></div>
+            </div>
+            <div class="m3-item l2 m2 s4">
+                <div class="circle-small m3-center-block m3-space-gray crystal"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="m3-padding-4x m3-silver" id="Gradients">
+        <h2 class="m3-text-center">Gradients</h2>
+        <div class="m3-row m3-margin-top-3x">
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-dream"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Dream</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-shine"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Shine</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-vintage"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Vintage</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-dawn"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Dawn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="m3-row">
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-space"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Space</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-terminal"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Terminal</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-lemon"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Lemon</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-grape"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Grape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-wine"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Wine</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-splash"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Splash</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-orange"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Orange</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m3-item">
+                <div class="m3-card m3-center-block">
+                    <div class="m3-card-media square m3-gradient-grape"></div>
+                    <div class="m3-card-content m3-white">
+                        <span>Grape</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        
+
+    <footer class="m3-padding-2x m3-dark-gray">
+        <article class="h3 m3-text-center m3-margin-top-3x">
+            <img src="https://i.imgur.com/XShrrkd.png" width="85" class="m3-margin-bottom-2x"><br>
+            <span class="m3-text-skyblue">Made in </span><span class="m3-text-white">Guatemala</span>
+        </article>
+        <section class="m3-center m3-text-center m3-padding-2x m3-text-gray">
+            <p class="m3-padding">
+                M3 Colors © 2020 by <a href="https://m3-framework.github.io"
+                class="m3-text-white">M3 Framework</a><br>
+                Hosted and mantained on Github Pages. <br>
+                <span class="m3-text-white">Code licensed MIT</span>
+            </p>
+        </section>
+        <section class="m3-center m3-mobile-small">
+            <a href="../Core/index.html" class="m3-btn">M3 Core</a>
+            <a href="../Iris/index.html" class="m3-btn">M3 Iris</a>
+            <span class="m3-btn m3-skyblue">M3 Colors</span>
+        </section>
+    </footer>
+
+    <script>
+        function OpenTabContent(evt, id) {
+            let tab_cont = document.getElementsByClassName("m3-tab-content");
+            for (i = 0; i < tab_cont.length; i++) {
+                tab_cont[i].classList.remove("active");
+            }
+
+            let tabs = document.getElementsByClassName("m3-tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(id).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dropdowns | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a class="m3-text-skyblue">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="modal.html">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#OnHover">♦️ Hover Activation</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#OnNavs">♦️ Inside Navigation</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#Examples">♦️ Further Examples</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-skyblue">Pure CSS</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Dropdown</h4>
+                    <div class="m3-vertical-margin-2x">
+                        <span class="m3-tag m3-small m3-silver">z-index: 5</span>
+                    </div>
+
+                    <p>
+                        A dropdown allows the user to choose one value from a list. When a drop-down list is inactive, it displays a single value. 
+                        When activated, it displays a list of values, from which the user may select one.
+                    </p>
+
+
+                    <label class="m3-dropdown">
+
+                        <a class="m3-btn">Dropdown Btn</a>
+
+                        <input type="checkbox" class="m3-toggle">
+
+                        <ul class="m3-dropdown-content">
+                            <a class="m3-hover-silver">One action</a>
+                            <a class="m3-hover-silver">Another action</a>
+                            <a class="m3-hover-silver">Something else here</a>
+                            <hr>
+                            <a class="m3-hover-silver m3-text-skyblue">External Link 1</a>
+                            <a class="m3-hover-silver m3-text-skyblue">External Link 2</a>
+                        </ul>
+                    
+                    </label>
+
+                    <label class="m3-dropdown">
+
+                        <div class="m3-btn m3-transparent m3-border"
+                        onmouseover="this.nextElementSibling.checked = true;"
+                        onmouseout="this.nextElementSibling.checked = false;">Card displayed on hover</div>
+
+                        <input type="checkbox" class="m3-toggle" id="Toggle">
+
+                        <div class="m3-dropdown-content">
+                            <section class="m3-card m3-small">
+                                <img src="http://placekitten.com/500/200" alt="Meow" class="m3-card-media">
+                                <article class="m3-card-content">
+                                    <h5>Did you know?</h5>
+                                    <span>Some useful information here</span>
+                                </article>
+                            </section>
+                        </div>
+                    
+                    </label>
+
+                    <p>(You may use the class <b>.dropdown-trigger</b> when the trigger is not an <b>.m3-btn</b>)</p>
+
+                    
+
+                    <article class="m3-padding m3-grey m3-margin-top-2x">
+                        <h5 class="m3-margin">Example:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('DropdownExHtml');"></button><code id='DropdownExHtml'>
+&lt;label class="m3-dropdown">
+    &lt;div class="m3-btn">Dropdown Btn&lt;/div>
+    &lt;input type="checkbox" class="m3-toggle">
+
+    &lt;ul class="m3-dropdown-content">
+        &lt;a>One action&lt;/a>
+        &lt;a>Another action&lt;/a>
+        &lt;a>Something else here&lt;/a>
+        &lt;hr>
+        &lt;a class="m3-text-skyblue">External Link 1&lt;/a>
+        &lt;a class="m3-text-skyblue">External Link 2&lt;/a>
+    &lt;/ul>
+&lt;/label>
+
+</code></pre>
+
+<h5 class="m3-margin">Right-aligned Dropdown:</h5>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('RightAlignExHtml');"></button><code id='RightAlignHtml'>
+&lt;div class="m3-dropdown-content" style='right:0;'>
+    Your Content...
+&lt;/div>
+
+</code></pre>
+                    </article>
+
+                </section>
+
+                <section class="m3-padding-2x" id="OnHover">
+                    <h4>
+                        <a href="#OnHover" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Hover Activation</h4>
+                    <p>
+                        As you might have noticed, we use a checkbox to toggle the content of a dropdown. <br>
+                        By using the <b>onmouseover</b> and <b>onmouseout</b> events, one may easily simulate a hover action:
+                    </p>
+                    
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('HoverActivateHtml');"></button><code id='HoverActivateHtml'>
+&lt;label class="m3-dropdown">
+    &lt;div class="m3-btn"
+    onmouseover="this.nextElementSibling.checked = true;"
+    onmouseout="this.nextElementSibling.checked = false;">Hover me!&lt;/div>
+    
+    &lt;input type="checkbox" class="m3-toggle">
+
+    &lt;div class="m3-dropdown-content">
+        Some relevant information here...
+    &lt;/div>
+&lt;/label>
+
+</code></pre>
+
+<b>ALTERNATIVE</b><span> (Using the <a href="https://www.w3schools.com/csSref/sel_hover.asp" class="m3-text-blue">:hover css selector</a>)</span>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('HoverAltHtml');"></button><code id='HoverAltHtml'>
+&lt;label class="m3-dropdown hoverable">
+    &lt;div class="m3-btn">Hover me!&lt;/div>
+    
+    &lt;input type="checkbox" class="m3-toggle">
+
+    &lt;div class="m3-dropdown-content">
+        Some relevant information here...
+    &lt;/div>
+&lt;/label>
+
+</code></pre>
+                </section>
+
+                <section class="m3-padding-2x" id="OnNavs">
+                    <h4>
+                        <a href="#OnNavs" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Inside Navigation</h4>
+                    <p>You can place dropdowns inside the navigation components</p>
+                    
+                    <div class="m3-nav m3-space-gray">
+                        <div class="m3-nav-brand">
+                            <a class="h4">BRAND</a>
+                            <span class="m3-nav-toggle" id="ToggleBTN"><i class="fas fa-bars"></i></span>
+                        </div>
+                        <div class="m3-nav-section">
+                            <a class="m3-grey crystal-3">You're Here</a>
+                            <label class="m3-dropdown">
+
+                                <div class="m3-btn">Dropdown</div>
+        
+                                <input type="checkbox" class="m3-toggle">
+        
+                                <div class="m3-dropdown-content m3-dark-gray">
+                                    <a>One action</a>
+                                    <a>Another action</a>
+                                    <a>Something else</a>
+                                </div>
+                            
+                            </label>
+                            <a>Random</a>          
+                        </div>
+                    </div>
+                    
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('DropdownNavHtml');"></button><code id='DropdownNavHtml'>
+&lt;nav class="m3-nav m3-space-gray">
+    &lt;div class="m3-nav-brand">
+        &lt;a class="h4">BRAND&lt;/a>
+        &lt;span class="m3-nav-toggle" id="ToggleBTN">&amp;equiv;&lt;/span>
+    &lt;/div>
+    &lt;div class="m3-nav-section">
+        &lt;label class="m3-dropdown">
+
+            &lt;div class="m3-btn">Dropdown&lt;/div>
+
+            &lt;input type="checkbox" class="m3-toggle">
+
+            &lt;div class="m3-dropdown-content">
+                &lt;a>One action&lt;/a>
+                &lt;a>Another action&lt;/a>
+                &lt;a>Something else&lt;/a>
+            &lt;/div>
+        
+        &lt;/label>        
+    &lt;/div>
+&lt;/nav>
+
+</code></pre>
+                    
+                </section>
+
+                <section class="m3-padding-2x" id="Examples">
+                    <h4>
+                        <a href="#Examples" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Further Examples</h4>
+                    <article class="m3-margin-top-4x">
+                        <h5>Image Zoom</h5>
+                        <p>Click the image to display in full size</p>
+                        <label class="m3-dropdown hoverable">
+                            <img class="dropdown-trigger" src="https://picsum.photos/500/300"
+                            width="40%" alt="Random Image"/>
+    
+                            <input type="checkbox" class="m3-toggle">
+    
+                            <div class="m3-dropdown-content">
+                                <img src="https://picsum.photos/500/300"
+                                width="100%" alt="Random Image"/>
+                            </div>
+                        
+                        </label>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ZoomIMGHtml');"></button><code id='ZoomIMGHtml'>
+&lt;label class="m3-dropdown">
+    &lt;img class="dropdown-trigger" src="some_img" width="40%" alt="Random Image"/>
+
+    &lt;input type="checkbox" class="m3-toggle">
+
+    &lt;div class="m3-dropdown-content">
+        &lt;img src="some_img" width="100%" alt="Random Image"/>
+    &lt;/div>
+&lt;/label>
+
+</code></pre>
+                    </article>
+
+                    <article class="m3-margin-top-4x">
+                        <h5>Card Dropdown</h5>
+                        <p>Display cards inside dropdowns</p>
+                        <label class="m3-dropdown hoverable">
+                            <button class="m3-btn">Hover me and find out</button>
+    
+                            <input type="checkbox" class="m3-toggle">
+    
+                            <div class="m3-dropdown-content">
+                                <section class="m3-card m3-shadow-2">
+                                    <img src="https://picsum.photos/600/400" class="m3-card-media">
+                                    <article class="m3-card-content">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, ipsa fuga laboriosam porro, a....
+                                    </article>
+                                </section>
+                            </div>
+                        
+                        </label>
+
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('DropCardHtml');"></button><code id='DropCardHtml'>
+&lt;label class="m3-dropdown hoverable">
+    &lt;button class="m3-btn">Just a button&lt;/button>
+    &lt;input type="checkbox" class="m3-toggle">
+
+    &lt;div class="m3-dropdown-content">
+        &lt;section class="m3-card m3-shadow-2">
+            &lt;img src="some_img" class="m3-card-media">
+            &lt;article class="m3-card-content">
+                Some text...
+            &lt;/article>
+        &lt;/section>
+    &lt;/div>
+&lt;/label>
+
+</code></pre>
+                    </article>
+                </section>
+
+                <article class="m3-right" style="max-width: 700px;"> 
+                    <div class="m3-media items-center m3-small"> 
+                        <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                        <div class="m3-media-content"> 
+                            <b>Reminder:</b> 
+                            The colors used in this documentation are part of M3 Colors. <br>
+                            If you don't require our library, remember to replace each color with your own.
+                        </div> 
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

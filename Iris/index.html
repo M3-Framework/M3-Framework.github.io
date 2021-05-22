@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>M3 Iris | Elegance to your Photos.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="m3-iris.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+    
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+
+    <style>
+        .title-ex{font-family: 'Russo One', sans-serif;}
+
+        .example-blend{ color: #FFF;}
+
+        [class*="m3-filter"]{ transition: filter 0.5s; cursor: pointer;}
+        [class*="m3-filter"]:hover{filter: none;}
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .example-blend .title-ex { font-size: 10px; margin-bottom: 0;}
+            .example-blend p { font-size: 8px; margin-bottom: 0;}
+        }
+
+        /* Desktop / TV */
+        @media (min-width: 1100px) {
+            .example-blend .title-ex { font-size: 22px; margin-bottom: 0;}
+            .example-blend p { font-size: 14px; margin-bottom: 10px;}
+        }
+
+
+        .scroll-snapping {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        .scroll-snapping .snap-box {
+            scroll-padding: 100px;
+            scroll-snap-align: start;
+            height: 100vh;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    
+
+    <div class="scroll-snapping">
+        <div class="snap-box">
+            <div class="m3-full-screen m3-parallax m3-text-white"
+            style="background-image: url('https://i.imgur.com/drBHhwE.jpg')">
+                <div class="m3-w-100-mobile m3-silver crystal m3-display-middle m3-center m3-vertical-center" 
+                style=" height: 100%;">
+                    <div class="m3-text-center m3-padding-4x">
+                        <img src="../Logos/m3-iris-gradient.png" width="120">
+                        <h4 class="m3-margin-top-2x">M3 IRIS</h4>
+                        <p><em>Glamour to your Photos</em></p>
+                        
+                        <a href="javascript:void(0);" class="m3-btn"
+                        style="background: #014E6C; color: #fff;">DOWNLOAD</a>
+                        
+                        <a href="javascript:void(0);" class="m3-btn m3-transparent m3-horizontal-borders"
+                        style="color:#014E6C;">
+                            FILTERS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="snap-box m3-vertical-center m3-center">
+            <div class="m3-text-center m3-padding-4x">
+                <h3>Single-Layer Filters</h3>
+                <p>Simple & Effective</p>
+                <p>
+                    Single-layer filters - the best way to KISS (Keep it Stupidly Simple) -<br>
+                    Express yourself & portray your feelings in memorable ways.
+                </p>
+
+                <hr>
+                <p class="m3-padding m3-text-gray">
+                    “Simplicity is about subtracting the obvious and adding the meaningful.”<br>
+                    - John Maeda, The Laws of Simplicity: Design, Technology, Business, Life  -
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="snap-box m3-vertical-center m3-center">
+            <div class="m3-row" style="width:100%;">
+                <div class="m3-item s6">
+                    <figure class="m3-filter-phantom m3-w-100 m3-h-100">
+                        <img src="https://picsum.photos/700"
+                        class="m3-round-2x m3-responsive-img">
+                    </figure>
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-white m3-mobile-tiny">m3-filter-phantom</p>
+                    </div>
+                </div>
+                
+    
+                <div class="m3-item s6">
+                    <img src="http://lorempixel.com/700/700/food/"
+                    class="m3-filter-eternal m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-mobile-tiny">m3-filter-eternal</p>
+                    </div>
+                </div>
+    
+                <div class="m3-item s6">
+                    <img src="http://lorempixel.com/600/600/nightlife/"
+                    class="m3-filter-moon m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-white m3-mobile-tiny">m3-filter-moon</p>
+                    </div>
+                </div>
+    
+                <div class="m3-item s6">
+                    <img src="https://placeimg.com/700/700/arch"
+                    class="m3-filter-solaris m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-mobile-tiny">m3-filter-solaris</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="snap-box m3-vertical-center m3-center">
+            <div class="m3-row" style="width: 100%">
+                <div class="m3-item s6">
+                    <img src="http://placeimg.com/700/700/people"
+                    class="m3-filter-studio m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-white m3-mobile-tiny">m3-filter-studio</p>
+                    </div>
+                </div>
+    
+                <div class="m3-item s6">
+                    <img src="http://lorempixel.com/700/700/city/"
+                    class="m3-filter-dream m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-mobile-tiny">m3-filter-dream</p>
+                    </div>
+                </div>
+    
+                <div class="m3-item s6">
+                    <img src="http://placeimg.com/700/700/nature"
+                    class="m3-filter-eclipse m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-white m3-mobile-tiny">m3-filter-eclipse</p>
+                    </div>
+                </div>
+    
+                <div class="m3-item s6">
+                    <img src="http://lorempixel.com/700/700/food/"
+                    class="m3-filter-time m3-round-2x m3-responsive-img">
+                    <div class="m3-center m3-display-bottom m3-margin-bottom">
+                        <p class="m3-tag m3-mobile-tiny">m3-filter-time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div class="snap-box m3-vertical-center m3-center" style="position: relative;">
+            <div class="m3-text-center m3-padding-4x">
+                <h3>Multiple-Layer Filters</h3>
+                <p>Modern & Luminous.</p>
+                
+                <p>
+                    Experience modernization with this collection of colorful filters.
+                    Inspire your viewers with a unique styling that only you could achieve.
+                </p>
+
+                <p>
+                    Our filters are formed by a combination of two layers, These layers allow us to
+                    place colors and gradients in front of your images. <br> By doing so, we provide a wide
+                    variety of combinations to give some good vibes to your web site.
+                </p>
+
+                <div class="m3-display-bottom m3-wine m3-w-100 m3-padding-3x">
+                    <span class="m3-center m3-large">
+                        Experimental <i class="fas fa-biohazard m3-margin-left"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="snap-box">
+            <div class="m3-white" style="position: relative;">
+                
+        
+                <div class="m3-row">
+                    <div class="m3-item s6">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-red m3-filter-dark m3-aspect-ratio">
+                                <img src="https://i.pinimg.com/originals/dc/d9/7f/dcd97ffec09f20bf9e3b9e2b6e55865c.jpg"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100
+                            example-blend" id="Spidey">
+                                <div class="m3-text-center m3-text-shadow">
+                                    <h4 class="title-ex">Spiderman</h4>
+                                    <p>X-X-X</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-wine m3-mobile-tiny">m3-blend-red</p>
+                        </div>
+                    </div>
+                    
+        
+                    <div class="m3-item s6">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-green m3-filter-dark m3-aspect-ratio">
+                                <img src="https://www.bing.com/th?id=OIP.zl8LgQ80eFr8G6yxN1cMAgHaEK&pid=Api&rs=1&p=0"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100">
+                                <div class="m3-text-center m3-text-shadow
+                                example-blend" id="Koji">
+                                    <h4 class="title-ex">Developer</h4>
+                                    <p>HIDEO KOJIMA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-green m3-mobile-tiny">m3-blend-green</p>
+                        </div>
+                    </div>
+        
+                    <div class="m3-item s6">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-blue m3-filter-dark m3-aspect-ratio">
+                                <img src="https://behindtheaudio.com/wp-content/uploads/2014/10/hans-laughing.jpg"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100">
+                                <div class="m3-text-center m3-text-shadow
+                                example-blend" id="Zim">
+                                    <h4 class="title-ex">Composer</h4>
+                                    <p>HANS ZIMMER</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-blue m3-mobile-tiny">m3-blend-blue</p>
+                        </div>
+                    </div>
+        
+                    <div class="m3-item s6">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-yellow m3-filter-dark m3-aspect-ratio">
+                                <img src="https://digitalsynopsis.com/wp-content/uploads/2014/06/supercar-wallpapers-bugatti-2.jpg"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100">
+                                <div class="m3-text-center m3-text-shadow
+                                example-blend">
+                                    <h4 class="title-ex">TITLE</h4>
+                                    <p>Genre & Details</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-gold m3-mobile-tiny">m3-blend-yellow</p>
+                        </div>
+                    </div>
+                </div>
+                
+        
+        
+                <div class="m3-row m3-center">
+                    <div class="m3-item s6 l3">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-orange m3-filter-dark m3-aspect-ratio">
+                                <img src="https://digitalsynopsis.com/wp-content/uploads/2014/06/supercar-wallpapers-bugatti-2.jpg"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100">
+                                <div class="m3-text-center m3-text-shadow
+                                example-blend">
+                                    <h3 class="title-ex">TITLE</h3>
+                                    <p>Genre & Details</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-orange m3-mobile-tiny">m3-blend-orange</p>
+                        </div>
+                    </div>
+        
+                    <div class="m3-item s6 l3">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-pink m3-filter-dark m3-aspect-ratio">
+                                <img src="https://pbs.twimg.com/media/DfkbtTbXkAAqDO-.jpg"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100">
+                                <div class="m3-text-center m3-text-shadow
+                                example-blend" id="Joos">
+                                    <h4 class="title-ex">Model</h4>
+                                    <p>STEFANIE JOOSTEN</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-pink m3-mobile-tiny">m3-blend-pink</p>
+                        </div>
+                    </div>
+        
+                    <div class="m3-item s6 m6 l3">
+                        <div style="position: relative;">
+                            <figure class="m3-blend-purple m3-filter-dark m3-aspect-ratio">
+                                <img src="https://digitalsynopsis.com/wp-content/uploads/2014/06/supercar-wallpapers-bugatti-2.jpg"
+                                class="m3-responsive-img m3-container">
+                            </figure>
+                            <div class="m3-center m3-display-middle m3-w-100">
+                                <div class="m3-text-center m3-text-shadow
+                                example-blend">
+                                    <h3 class="title-ex">TITLE</h3>
+                                    <p>Genre & Details</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m3-center m3-margin-top">
+                            <p class="m3-tag m3-purple m3-mobile-tiny">m3-blend-purple</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="m3-row m3-vertical-margin-2x">
+                    <div class="m3-item">
+                        <p>Apply Custom Borders (yeap, it isn't so simple with multiple layers):</p>
+                        <div class="m3-padding-2x m3-silver m3-text-gray m3-round">
+                                [class^="m3-blend"],<br>
+                                [class^="m3-blend"]::after,<br>
+                                [class^="m3-blend"] img,<br>
+                                [class^="m3-blend"] img::after{ border-radius: 20px;}
+                        </div>
+                    </div>
+                    <div class="m3-item">
+                        <p>Usage:</p>
+                        <div class="m3-padding-2x m3-silver m3-text-gray m3-round">
+                            &lt;figure class="m3-blend-yellow"&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="https://placeimg.com/700/700/arch"&gt;<br>
+                            &lt;/figure&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="snap-box">
+
+        </div>
+        
+      </div>
+
+    
+
+    
+
+
+
+    
+
+
+
+    <div class="m3-padding-3x" style="position: relative; background: #f5f5f5">
+            <span class="m3-center m3-vertical-margin m3-text-orange m3-small">
+                Includes Old Browser Fallback <i class="fas fa-radiation-alt m3-margin-left"></i>
+            </span>
+        <div class="m3-text-gray m3-padding-2x">
+            <div class="m3-container m3-text-center">
+                <h3>Gradient Filters</h3>
+                <p>Take it to the next level.</p>
+            </div>
+            <div class="m3-container m3-text-center">
+                <p>
+                    <b>Inspire Yourself:</b> Convey a meaningful message.<br>
+                    <b>Inspire Others:</b> Transmit your thoughts and feelings in powerful ways. 
+                </p>
+            </div>
+        </div>
+
+        <div class="m3-row">
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-rainbow m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-rainbow</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-toxic m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-toxic</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-energy m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-energy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-venom m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-venom</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-inferno m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-inferno</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-terra m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-terra</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="m3-item s6">
+                <div style="position: relative;">
+                    <figure class="m3-blend-aquatic m3-aspect-ratio">
+                        <img src="https://hdwallpapers.move.pk/wp-content/uploads/2015/08/blue-shad-eye.jpg"
+                        class="m3-responsive-img m3-container">
+                    </figure>
+                    
+                    <div class="m3-center m3-display-bottom m3-w-100">
+                        <p class="m3-tag m3-black m3-mobile-tiny">m3-blend-aquatic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

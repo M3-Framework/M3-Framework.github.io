@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Modal | M3 Core</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Core@20.01/m3-core.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+
+    <style>
+        html{scroll-behavior: smooth;}
+        #main {margin-left: 300px; transition: margin-left .5s;}
+
+        .m3-sidenav{width: 300px;}
+        .pattern{
+            background-color: #0e0e0e;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23403e44' fill-opacity='0.64'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @media (max-width: 640px) {
+            #main{margin-left: 0;}
+        }
+        @media (min-width: 641px) and (max-width: 1024px){
+            #main{margin-left: 0;}
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Docs-Opt" class="m3-sidenav display-default pattern m3-text-white">
+        <a class="m3-close m3-desktop-hide" onclick="DisplaySidenav('Docs-Opt');"><i class="fas fa-times m3-large"></i></a>
+
+        <div class="m3-text-center">
+            <a href="../../index.html">
+                <img src="https://i.imgur.com/bwrCJE7.png" width="100">
+                <p class="h5">M3 Core</p>
+            </a>
+            <div class="m3-input m3-margin-top-2x m3-horizontal-margin
+            m3-border m3-border-white m3-round-2x m3-text-white">
+                <input id="Searchbar" type="text" onkeyup="SearchTxt()" placeholder="Search" 
+                class="m3-input-field">
+                <span class="m3-input-item"><i class="fas fa-search"></i></span>
+            </div>
+            <ul class="m3-list m3-hide" id="SearchResults">
+                <li><a href="#">Containers & Cards</a></li>
+                <li><a href="#">Buttons & Links</a></li>
+                <li><a href="#">Tables & Lists</a></li>
+                <li><a href="#">Chips & Tags</a></li>
+            </ul>
+        </div>
+
+            <button class="m3-accordion m3-transparent m3-margin-top-2x">Components</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="accordion.html">Accordions</a></li>
+                    <li><a href="alerts.html">Alerts and Notifications</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="chips.html">Chips</a></li>
+                    <li><a href="code-block.html">Code Blocks</a></li>
+                    <li><a href="container.html">Containers</a></li>
+                    <li><a href="dropdown.html">Dropdowns</a></li>
+                    <li><a href="forms.html">Forms</a></li>
+                    <li><a href="lists.html">Lists</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a class="m3-text-skyblue">Modal</a></li>
+                    <li><a href="nav.html">Navigation</a></li>
+                    <li><a href="navcard.html">Navcard</a></li>
+                    <li><a href="photofilm.html">Photo Film</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="progress-bar.html">Progress Bar</a></li>
+                    <li><a href="sidenav.html">Sidenav</a></li>
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tabs.html">Tabs</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">Utilities</button>
+            <div class="m3-panel m3-dark-grey crystal-3">
+                <ul class="m3-list">
+                    <li><a href="u_adaptive-text.html">Adaptive Text</a></li>
+                    <li><a href="u_aspect-ratio.html">Aspect Ratio</a></li>
+                    <li><a href="u_borders-shadows.html">Borders and Shadows</a></li>
+                    <li><a href="u_display.html">Display</a></li>
+                    <li><a href="u_grid.html">Flexbox Grid</a></li>
+                    <li><a href="u_positioning.html">Positioning</a></li>
+                    <li><a href="u_responsive-media.html">Responsive Media</a></li>
+                    <li><a href="u_spacing.html">Spacing</a></li>
+                    <li><a href="u_screen-reader.html">Screen Reader</a></li>
+                    <li><a href="u_text-mods.html">Text Modifications</a></li>
+                </ul>
+            </div>
+            
+            <button class="m3-accordion m3-transparent">JavaScript</button>
+            <div class="m3-panel">
+            
+            </div>
+
+            <div class="m3-container m3-margin-top-2x">
+                <p class="m3-text-center">Contents</p>
+                <ul class="m3-list m3-dark-grey crystal">
+                    <li class="m3-hover-dark-grey"><a href="#MainSection">♦️ Introduction</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#ModalSize">♦️ Modal Size</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#BottomSheet">♦️ Bottom Sheet</a></li>
+                    <li class="m3-hover-dark-grey"><a href="#AddJS">♦️ Adding JavaScript</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <main id="main">
+        <div class="m3-container m3-padding-2x">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/msSxAkc.png" width="230"></a>
+            <button class="m3-large m3-white m3-right m3-desktop-hide" style="position: fixed; top: 10px; right: 10px; z-index:4;"
+            onclick="DisplaySidenav('Docs-Opt')"><i class="fas fa-bars"></i></button>
+        </div>
+        <article class="m3-padding m3-margin-left">
+            <span class="m3-small m3-tag m3-transparent m3-border m3-border-yellow m3-text-bronze">JavaScript Optional</span>
+        </article>
+
+        <div class="m3-row">
+            <div class="m3-item">
+                <section class="m3-padding-2x" id="MainSection">
+                    <h4>Modals</h4>
+                    <div class="m3-vertical-margin-2x">
+                        <span class="m3-tag m3-small m3-silver">min-width: 35%</span>
+                        <span class="m3-tag m3-small m3-silver">z-index: 9</span>
+                    </div>
+                    <p>
+                        A modal is a dialog box/popup window that is displayed on top of the current page.
+                        Using the <b>href</b> attribute and the <b>:target</b> selector, it is possible to display a modal without the need of JavaScript.
+                    </p>
+
+                    <a class="m3-btn m3-transparent m3-hover-light-gray"
+                    href="#ex-modal">Show Modal</a>
+
+                    <article id="ex-modal" class="m3-modal">
+                        <section class="m3-modal-content">
+                            <a href="#Close" title="Close" class="m3-modal-close m3-red">Close</a>
+                            <header class="m3-black m3-padding-2x">
+                                <h5>Modal Title</h5>
+                            </header>
+                            <div class="m3-container m3-padding-2x" style="max-height: 300px; overflow-y: auto;">
+                                <p class="m3-text-section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, neque repellat dolorum sequi inventore ipsum obcaecati quae illo, doloribus dolorem architecto eligendi animi enim deserunt in exercitationem explicabo. Minus, incidunt!</p>
+                                <p class="m3-text-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus sunt enim voluptatum! Facere atque quia perferendis corrupti eligendi? Placeat dolor ex ea dolorum corrupti, esse mollitia molestias sequi odio asperiores?</p>
+                                <p class="m3-text-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus sunt enim voluptatum! Facere atque quia perferendis corrupti eligendi? Placeat dolor ex ea dolorum corrupti, esse mollitia molestias sequi odio asperiores?</p>
+                                <p class="m3-text-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus sunt enim voluptatum! Facere atque quia perferendis corrupti eligendi? Placeat dolor ex ea dolorum corrupti, esse mollitia molestias sequi odio asperiores?</p>
+                                <p class="m3-text-section">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus sunt enim voluptatum! Facere atque quia perferendis corrupti eligendi? Placeat dolor ex ea dolorum corrupti, esse mollitia molestias sequi odio asperiores?</p>
+                            </div>
+                            <footer class="m3-silver m3-text-right">
+                                <button class="m3-btn">One Button</button>
+                                <button class="m3-btn">Another Button</button>
+                            </footer>
+                        </section>
+                    </article>
+
+                    <a href="#img-modal">
+                        <img src="https://picsum.photos/1000/700" width="110">
+                    </a>
+
+                    <article id="img-modal" class="m3-modal">
+                        <section class="m3-modal-content">
+                            <a href="#Close" class="m3-modal-close m3-wine m3-huge">&times;</a>
+                            <img src="https://picsum.photos/1000/700" width="100%"
+                            class="m3-vertical-center m3-center">
+                        </section>
+                    </article>
+
+                    <a class="m3-btn m3-transparent m3-hover-light-gray" href="#login-modal">
+                        Login Modal
+                    </a>
+
+                    <article id="login-modal" class="m3-modal">
+                        <section class="m3-modal-content"
+                        style="background-image: url('https://i.picsum.photos/id/1061/900/700.jpg');">
+                            <a href="#Close" class="m3-modal-close fa-2x">&times;</a>
+                            <form class="m3-jumbo">
+                                <h5 class="m3-center m3-margin-bottom-2x">BRAND</h5>
+
+                                <div class="m3-input">
+                                    <span class="fas fa-user-circle m3-input-item"></span>
+                                    <input class="m3-input-field" type="text" placeholder="Username">
+                                </div>
+                                <div class="m3-input">
+                                    <span class="fas fa-user-lock m3-input-item"></span>
+                                    <input class="m3-input-field" type="password" placeholder="Password">
+                                </div>
+
+                                <p class="m3-center">Forgot your password?</p>
+
+                                <div class="m3-center">
+                                    <button class="m3-btn">Access</button>
+                                    <button class="m3-btn m3-blue"><i class="fab fa-facebook-square"></i></button>
+                                    <button class="m3-btn m3-red"><i class="fab fab fa-google"></i></button>
+                                </div>
+                            </form>
+                        </section>
+                    </article>
+                        
+
+                    <article class="m3-padding m3-vertical-margin-2x m3-grey m3-shadow-2">
+                        <h5>Modal Template:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ModalBasicHtml');"></button><code id='ModalBasicHtml'>
+&lt;a href="#AnyID" class="m3-btn">Modal Trigger&lt;/a>
+
+&lt;article id="AnyID" class="m3-modal">
+    &lt;section class="m3-modal-content">
+        &lt;a href="#Close" title="Close" class="m3-modal-close m3-red">Close&lt;/a>
+        &lt;header class="m3-padding-2x">
+            &lt;h5>Modal Title&lt;/h5>
+        &lt;/header>
+        &lt;div class="m3-container m3-padding-2x">
+            &lt;p>You content goes here&lt;/p>
+        &lt;/div>
+    &lt;/section>
+&lt;/article>
+
+</code></pre>
+                        <h5>Fixed Footer:</h5>
+                        <p>
+                            Create a container with <code class="m3-dark">overflow-y:auto;</code> inside the 
+                            <code class="m3-dark">.m3-modal-content</code> and then apply a <code class="m3-dark">max-height: [number]px;</code> to it.
+                        </p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('FixedFooterHtml');"></button><code id='FixedFooterHtml'>
+&lt;a href="#AnyID" class="m3-btn">Modal Trigger&lt;/a>
+
+&lt;article id="AnyID" class="m3-modal">
+    &lt;section class="m3-modal-content">
+        &lt;a href="#Close" title="Close" class="m3-modal-close m3-red">Close&lt;/a>
+        &lt;div class="m3-container m3-padding-2x" style="max-height: 300px; overflow-y: auto;">
+            &lt;p>Try adding more text...&lt;/p>
+        &lt;/div>
+        &lt;footer class="m3-silver m3-text-right">
+            &lt;button class="m3-btn">One Button&lt;/button>
+            &lt;button class="m3-btn">Another Button&lt;/button>
+        &lt;/footer>
+    &lt;/section>
+&lt;/article>
+
+</code></pre>
+                        <h5>Image Modal:</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ImgModalHtml');"></button><code id='ImgModalHtml'>
+&lt;a href="#img-modal">
+    &lt;img src="img_src" width="110">
+&lt;/a>
+
+&lt;article id="img-modal" class="m3-modal">
+    &lt;section class="m3-modal-content">
+        &lt;a href="#Close" class="m3-modal-close" style='font-size: 250%;'>&times;&lt;/a>
+        &lt;img src="img_src" width="100%" class="m3-vertical-center m3-center">
+    &lt;/section>
+&lt;/article>
+
+</code></pre>
+                        <h5>Login Modal:</h5>
+                        <span class="m3-tag m3-gradient-grape">Font Awesome used for the icons</span>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('LoginModalHtml');"></button><code id='LoginModalHtml'>
+&lt;a href="#login-modal" class="m3-btn m3-transparent m3-hover-light-gray">Login Modal&lt;/a>
+
+&lt;article id="login-modal" class="m3-modal">
+    &lt;section class="m3-modal-content" style="background-image: url(img_src);">
+        &lt;a href="#Close" class="m3-modal-close fa-2x">&times;&lt;/a>
+        &lt;form class="m3-jumbo">
+            &lt;h5 class="m3-center m3-margin-bottom-2x">BRAND&lt;/h5>
+
+            &lt;div class="m3-input">
+                &lt;span class="fas fa-user-circle m3-input-item">&lt;/span>
+                &lt;input class="m3-input-field" type="text" placeholder="Username">
+            &lt;/div>
+            &lt;div class="m3-input">
+                &lt;span class="fas fa-user-lock m3-input-item">&lt;/span>
+                &lt;input class="m3-input-field" type="password" placeholder="Password">
+            &lt;/div>
+
+            &lt;p class="m3-center">Forgot your password?&lt;/p>
+
+            &lt;div class="m3-center">
+                &lt;button class="m3-btn">Access&lt;/button>
+                &lt;button class="m3-btn m3-blue">&lt;i class="fab fa-facebook-square">&lt;/i>&lt;/button>
+                &lt;button class="m3-btn m3-red">&lt;i class="fab fab fa-google">&lt;/i>&lt;/button>
+            &lt;/div>
+        &lt;/form>
+    &lt;/section>
+&lt;/article>
+
+</code></pre>
+                    </article>
+
+                </section>
+
+                <section class="m3-padding-2x" id="ModalSize">
+                    <h4>
+                        <a href="#ModalSize" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Modal Size</h4>
+                    <p>
+                        By default, modals have their <b>min-width</b> set to 35% and they will automatically expand themselves up to 85% width. <br>
+                        On mobile devices, a modal is set to have a width of 90%.
+                    </p>
+
+                    <p>
+                        You can specify width measures for a modal using the sizing utilities:
+                    </p>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('ModalSizeHtml');"></button><code id='ModalSizeHtml'>
+...
+    &lt;section class="m3-modal-content m3-w-75 m3-w-100-mobile">
+        ...
+    &lt;/section>
+...
+
+</code></pre>
+
+                </section>
+
+                <section class="m3-padding-2x" id="BottomSheet">
+                    <h4>
+                        <a href="#BottomSheet" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Bottom Sheet</h4>
+                    <p>Bottom Sheet Modals are useful for displaying actions to the user on the bottom of a screen. <br> They work in the same way as regular modals.</p>
+                
+                    <a class="m3-btn m3-transparent m3-hover-light-gray" href="#bottom-modal">
+                        Show Bottom Sheet
+                    </a>
+
+                    <p class="m3-margin-top-2x">Just add the class <b>.bottom-sheet</b> to your <b>.m3-modal</b> to make a Bottom Sheet Modal.</p>
+                    <code class="m3-dark" style="font-size: 100%;">.m3-modal bottom-sheet</code>
+    
+                    <article id="bottom-modal" class="m3-modal bottom-sheet">
+                        <section class="m3-modal-content m3-space-gray m3-w-75 m3-w-100-mobile">
+                            <header class="m3-silver m3-padding">
+                                <div class="m3-text-right m3-large">
+                                    <span class="fas fa-dot-circle m3-text-yellow"></span>
+                                    <span class="fas fa-dot-circle m3-text-light-green m3-horizontal-margin-2x"></span>
+                                    <a href="#Close" class="fas fa-dot-circle m3-text-red"></a>
+                                </div>
+                            </header>
+                            <div class="m3-container m3-text-truncate m3-padding-2x m3-text-light-green">
+                                <span class="m3-text-white">$ </span>git clone https://github.com/nuggets/chicken <br>
+                                <div class="m3-padding-2x m3-margin-left m3-mobile-small">
+                                    Cloning into 'chicken'... <br>
+                                    remote: Reusing existing pack: 1857, done. <br>
+                                    remote: Total 1857 (delta 0), reused 0 (delta 0) <br>
+                                    Receiving objects: 100% (1857/1857), 374.35 KiB | 268.00 KiB/s, done. <br>
+                                    Resolving deltas: 100% (772/772), done. <br>
+                                    Checking connectivity... done. <br>
+                                </div>
+                                <span class="m3-text-white">$ </span>rm -i filename.extension <br>
+                            </div>
+                            
+                        </section>
+                    </article>
+
+
+                    <article class="m3-padding m3-grey m3-margin-top-3x">
+                        <h5>Bottom Sheet Example:</h5>
+                        <span class="m3-tag m3-gradient-grape">Font Awesome used for the icons</span>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BottomSheetExHtml');"></button><code id='BottomSheetExHtml'>
+&lt;a class="m3-btn" href="#bottom-modal">Bottom Sheet&lt;/a>
+
+&lt;article id="bottom-modal" class="m3-modal bottom-sheet">
+    &lt;section class="m3-modal-content m3-space-gray m3-w-100">
+        &lt;header class="m3-silver m3-padding">
+            &lt;div class="m3-text-right m3-large">
+                &lt;span class="fas fa-dot-circle m3-text-yellow">&lt;/span>
+                &lt;span class="fas fa-dot-circle m3-text-light-green m3-horizontal-margin-2x">&lt;/span>
+                &lt;a href="#Close" class="fas fa-dot-circle m3-text-red">&lt;/a>
+            &lt;/div>
+        &lt;/header>
+        &lt;div class="m3-container m3-text-truncate m3-padding-2x m3-text-light-green">
+            &lt;span class="m3-text-white">$ &lt;/span>git clone https://github.com/nuggets/chicken &lt;br>
+            &lt;div class="m3-padding-2x m3-margin-left">
+                Cloning into 'chicken'... &lt;br>
+                remote: Reusing existing pack: 1857, done. &lt;br>
+                remote: Total 1857 (delta 0), reused 0 (delta 0) &lt;br>
+                Receiving objects: 100% (1857/1857), 374.35 KiB | 268.00 KiB/s, done. &lt;br>
+                Resolving deltas: 100% (772/772), done. &lt;br>
+                Checking connectivity... done. &lt;br>
+            &lt;/div>
+            &lt;span class="m3-text-white">$ &lt;/span>rm -i filename.extension &lt;br>
+        &lt;/div>
+        
+    &lt;/section>
+&lt;/article>
+
+</code></pre>
+
+                        <h5 class="m3-margin-top">Bottom Sheet Template</h5>
+<pre class="html-dark m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('BottomSheetTemplate');"></button><code id='BottomSheetTemplate'>
+&lt;a class="m3-btn" href="#AnyID">Bottom Sheet&lt;/a>
+
+&lt;article id="AnyID" class="m3-modal bottom-sheet">
+    &lt;section class="m3-modal-content">
+        &lt;a href="#Close" class="m3-modal-close m3-huge">&amp;times;&lt;/a>
+        &lt;div class="m3-container m3-padding-2x">
+            Content Here
+        &lt;/div>
+    &lt;/section>
+&lt;/article>
+
+</code></pre>
+                    </article>
+
+
+                </section>
+                
+
+                <section class="m3-padding-2x" id="AddJS">
+                    <h4>
+                        <a href="#AddJS" class="fas fa-paperclip m3-small m3-text-grey m3-hover-text-blue"></a>
+                        Adding JavaScript</h4>
+                    <p>
+                        Optionally, you can use javascript to automatically close the modal when the user clicks/touches outside
+                        the <b>.m3-media-content</b>
+                    </p>
+
+                    <p>
+                        We use <b>#Close</b> to avoid going to the top of the page everytime a modal is closed. <br>
+                        Feel free to use any <b>#Name</b> as long as it doesn't belong to any html element in your page.
+                    </p>
+
+<pre class="m3-text-white"><button class="m3-right m3-margin-right far fa-copy" onclick="CopyClip('LoginModalHtml');"></button><code id='LoginModalHtml' class="js-dark">
+var modal = document.getElementsByClassName("m3-modal");
+
+var DismissModalEvent = function(event) {
+    for(var i=0; i&lt;modal.length; i++){
+        if (event.target == modal[i]) {window.location.hash='#Close';}
+    }
+}
+
+window.onclick = DismissModalEvent;
+window.ontouchend = DismissModalEvent;
+
+</code></pre>
+                </section>
+
+                <article class="m3-right" style="max-width: 800px;"> 
+                    <div class="m3-media items-center m3-small"> 
+                        <i class="fas fa-info-circle fa-2x m3-text-blue m3-media-figure"></i> 
+                        <div class="m3-media-content"> 
+                            <b>Reminder:</b> 
+                            The colors used in this documentation are part of M3 Colors. <br>
+                            If you don't require our library, remember to replace each color with your own.
+                        </div> 
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <script>
+        var modal = document.getElementsByClassName("m3-modal");
+        var DismissModalEvent = function(event) {
+            for(var i=0; i<modal.length; i++){
+                if (event.target == modal[i]) {window.location.hash='#Close';}
+            }
+        }
+        window.onclick = DismissModalEvent;
+        window.ontouchend = DismissModalEvent;
+    </script>
+
+    <!-- JavaScript used in the Documentation -->
+    <script src="js/docs.js"></script>
+
+    <script src="https://gitcdn.link/repo/dp-DanielCastillo/CodigoFuente/master/dark.js"></script>
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>

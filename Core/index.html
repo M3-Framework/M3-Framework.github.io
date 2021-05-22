@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>M3 Core | The Essence of Design</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/bwrCJE7.png">
+
+    <link href="../../M3-Core/m3-core.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/m3-framework/M3-Colors@develop/m3-colors.min.css" rel="stylesheet"/>
+
+    <style>
+        html{scroll-behavior: smooth;}
+
+        .video-container{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -100;
+        }
+
+        .blackboard{
+            color: #fff;
+            background-image: url(https://i.imgur.com/bDbZdaM.jpg);
+            background-size: cover;
+        }
+
+        #HeaderVideo {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            background:#232a34;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="m3-full-screen m3-container-fw m3-text-white m3-vertical-center">
+        <div class="m3-margin m3-display-top-left">
+            <a href="http://m3-framework.github.io"><img src="https://i.imgur.com/hqF0fTR.png" width="230"></a>
+        </div>
+
+        <div class="video-container">
+            <video autoplay muted loop id="HeaderVideo">
+                <source src="header-video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+        <div class="m3-center-block m3-text-center">
+            <img src="https://i.imgur.com/bwrCJE7.png" width="180">
+            <h1 class="m3-vertical-margin-2x m3-display-2x m3-text-shadow">M3 Core</h1>
+            <p class="h4 m3-text-shadow">The Essence of Design</p>
+
+            <a href="#" class="m3-btn m3-blue crystal m3-hover-teal m3-round-2x">Get Started</a>
+            <a href="#" class="m3-btn m3-transparent m3-hover-text-silver m3-text-shadow">Docs</a>
+
+            <p class="m3-display-bottom-right m3-dark-gray crystal-3 m3-padding m3-text-right"
+            style="font-size: 0.8em;">
+                <span class="m3-small ">Video by 
+                    <a href="https://www.pexels.com/@pressmaster-1583460"
+                    class="m3-hover-text-skyblue">pressmaster</a> 
+                    from Pexels
+                </span>
+            </p>
+        </div>
+        
+    </header>
+
+    <nav class="m3-navcard m3-black" style="max-width: 450px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
+        <input type="checkbox" id="NavcardToggle">
+        <section class="m3-navcard-content">
+            <a class="m3-hover-space-gray">Get Started</a>
+            <a class="m3-hover-space-gray">Documentation</a>
+            <a class="m3-hover-space-gray">Concepts</a>
+        </section>
+        <label for="NavcardToggle" class="m3-toggle m3-huge">
+            <span class="m3-round" style="padding: 0 70px;">&equiv;</span>
+        </label>
+    </nav>
+
+    <section class="m3-row justify-center m3-margin-top-4x">
+        <div class="m3-item m3-text-center size-12 m3-adaptive-text">
+            <h2>Design Something That Matters</h2>
+            <p>A newborn CSS library for any device, that anyone can use.</p>
+            <p>
+                +25 Components & Utilities. Full Responsive and Modern.
+            </p>
+        </div>
+        <div class="m3-item m3-light-gray m3-text-center m3-adaptive-text">
+            <article class="m3-padding-3x">
+                <h2>Design Something That Matters</h2>
+                <p>A newborn CSS library for any device, that anyone can use.</p>
+                <p>
+                    +25 Components & Utilities. Full Responsive and Modern.
+                </p>
+            </article>
+        </div>
+        <div class="m3-item blackboard m3-text-center m3-adaptive-text m3-padding-2x">
+            <article class="m3-padding-3x">
+                <h2>Take only what you need</h2>
+                <p>A newborn CSS library for any device, that anyone can use.</p>
+                <p>
+                    +25 Components & Utilities. Full Responsive and Modern.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="m3-jumbo" style="margin-top: 0;">
+        <p class="h2 m3-center">Take a look at some of our features 🧐</p>
+
+        <article>
+            <h4>Flex Grid</h4>
+            <p>Simple and effective. Just items that resize themselves inside the rows 😆</p>
+
+            <div class="m3-row m3-text-center">
+                <div class="m3-item m3-silver m3-border">1</div>
+                <div class="m3-item m3-silver m3-border">2</div>
+                <div class="m3-item m3-silver m3-border">3</div>
+                <div class="m3-item m3-silver m3-border">4</div>
+                <div class="m3-item m3-silver m3-border">5</div>
+                <div class="m3-item m3-silver m3-border">6</div>
+                <div class="m3-item m3-silver m3-border">7</div>
+                <div class="m3-item m3-silver m3-border">8</div>
+                <div class="m3-item m3-silver m3-border">9</div>
+                <div class="m3-item m3-silver m3-border">10</div>
+                <div class="m3-item m3-silver m3-border">11</div>
+                <div class="m3-item m3-silver m3-border">12</div>
+            </div>
+
+            <div class="m3-row m3-text-center">
+                <div class="m3-item m3-silver m3-border">1</div>
+                <div class="m3-item m3-silver m3-border">2</div>
+                <div class="m3-item m3-silver m3-border">3</div>
+                <div class="m3-item m3-silver m3-border">4</div>
+                <div class="m3-item m3-silver m3-border">5</div>
+                <div class="m3-item m3-silver m3-border">6</div>
+            </div>
+
+            <div class="m3-row m3-text-center">
+                <div class="m3-item m3-silver m3-border">1</div>
+                <div class="m3-item m3-silver m3-border">2</div>
+                <div class="m3-item m3-silver m3-border">3</div>
+            </div>
+            
+            <div class="m3-row m3-text-center">
+                <div class="m3-item m3-silver m3-border">1</div>
+            </div>
+
+            <article class="m3-margin-top-2x" style="max-width: 700px;">
+                <p>
+                    While it's possible to add as many items as you want, keeping it up to 12 items is suggested. <br>
+                    If you need smaller divisions, you may always <b>nest</b> rows.
+                </p>
+            </article>
+        </article>
+
+        <article class="m3-margin-top-4x">
+            <h4>Photo Film</h4>
+            <p>A different way to present media to your viewers.</p>
+
+            <div class="m3-photofilm m3-black">
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/400/300" alt="Example Photo Film 1">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/401/300" alt="Example Photo Film 2">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/402/300" alt="Example Photo Film 3">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/403/300" alt="Example Photo Film 4">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/404/300" alt="Example Photo Film 5">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/405/300" alt="Example Photo Film 6">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+                <figure class="m3-figure">
+                    <img src="http://picsum.photos/406/300" alt="Example Photo Film 7">
+                    <figcaption class="m3-caption">Title</figcaption>
+                </figure>
+            </div>
+        </article>
+    </section>
+
+
+    <footer class="m3-padding-2x m3-black">
+        <article class="h3 m3-text-center m3-margin-top-3x">
+            <img src="https://i.imgur.com/XShrrkd.png" width="85" class="m3-margin-bottom-2x"><br>
+            <span class="m3-text-skyblue">Made in </span><span class="m3-text-white">Guatemala</span>
+        </article>
+        <section class="m3-center m3-text-center m3-padding-2x m3-text-gray">
+            <p class="m3-padding">
+                M3 Core © 2020 by <a href="https://m3-framework.github.io"
+                class="m3-text-white">M3 Framework</a><br>
+                Hosted and mantained on Github Pages. <br>
+                <span class="m3-text-white">Code licensed MIT</span>
+            </p>
+        </section>
+        <section class="m3-center m3-mobile-small">
+            <span class="m3-btn m3-blue">M3 Core</span>
+            <a href="../Iris/index.html" class="m3-btn m3-hover-emerald">M3 Iris</a>
+            <a href="../Colors/index.html" class="m3-btn m3-hover-skyblue">M3 Colors</a>
+        </section>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/1c16dd90a3.js"></script>
+</body>
+</html>
